@@ -506,6 +506,7 @@ class DataProcessor:
         df["Machine_Code"] = df["Machine_Code"].apply(
             lambda x: str(x).strip() if pd.notna(x) and str(x).strip() not in ("", "nan", "-") else np.nan
         )
+        df["Machine_Name"] = df["Machine_Name"].astype(object)
         blank_name = df["Machine_Name"].isna()
         df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
             self._normalize_machine_name
