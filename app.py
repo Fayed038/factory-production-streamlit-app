@@ -186,10 +186,12 @@ class GSheetsSecurityManager:
         df = df.fillna('')
         if df.empty:
             # Create default admin if empty
+            _admin_salt = secrets.token_hex(16)
+            _admin_hash = hashlib.sha256((_admin_salt + "admin123").encode("utf-8")).hexdigest()
             df = pd.DataFrame({
                 'username': ['admin'],
-                'password_hash': [''],
-                'salt': [''],
+                'password_hash': [_admin_hash],
+                'salt': [_admin_salt],
                 'display_name': ['Administrator (Admin)'],
                 'role': ['Admin'],
                 'permissions': [json.dumps(ROLE_DEFAULTS["Admin"])],
