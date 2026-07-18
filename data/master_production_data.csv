@@ -1,0 +1,265 @@
+Date,Shift,Machine_Name,Machine_Code,Operator,Supervisor,Output_Quantity,Wastage_Cigarette,Wastage_Paper,Wastage_Tipping_Paper,Dust,Stem,Wastage_Shell_Blanket,Wastage_Slide_AluFoil,Wastage_AluFoil_InnerFrame,Wastage_BOPP,Stoppage_Reason,Stoppage_Duration_Min,Report_Type,Machine_Label,Data_Quality_Flag
+2026-07-01,A,Making-01,M8-IND-2024-01,md. Muzammel,md. Saiful Islam,570000.0,29000.0,1600.0,55.0,8800.0,6000.0,,,,,Cork knife: 1 hour stop for mechanical works,60.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-01,A,Making-02,M8-EN-2017-01,md. Nahid,md. Saiful Islam,570000.0,22000.0,2000.0,60.0,8700.0,2800.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-01,A,Making-03,M8-IN-2024-02,md. Muktibul,md. Saiful Islam,696000.0,17000.0,1700.0,50.0,8200.0,8500.0,,,,,All making: 1/2hr stop for custom problem + 1/2hr for electricity up-down,240.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-01,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,620000.0,19700.0,1450.0,40.0,11600.0,4200.0,,,,,Cork knife: 02 hours stopped for mechanical & electrical works,120.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-01,B,Making-02,M8-EN-2017-01,md. Alamgir,Md. Israfil,658500.0,21500.0,1900.0,45.0,9700.0,4100.0,,,,,Hopper jam & Tipping Roller: 01 hour stopped for mechanical works,60.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-01,B,Making-03,M8-IN-2024-02,md. Rana,Md. Israfil,706000.0,16600.0,1350.0,25.0,9400.0,3900.0,,,,,Catcher Drum: 01 hour stopped for mechanical works,60.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-01,A,Making-04,M8-CH-2025-01,md. Rashid,md. Saiful Islam,612000.0,12000.0,900.0,45.0,8000.0,4800.0,,,,,Transfer Drum: 1.5 hours stop for mechanical works,90.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-01,B,Making-04,M8-CH-2025-01,md. Jabed,Md. Israfil,610020.0,17500.0,1600.0,45.0,8400.0,3700.0,,,,,Mechanical & electrical works stoppage,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-01,A,Making-05,M8-IND-2026-01,md. Shofiqul,,696000.0,10000.0,1500.0,55.0,8500.0,3200.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-01,B,Making-05,M8-IND-2026-01,Shodinov,,551200.0,14800.0,1250.0,30.0,9900.0,3100.0,,,,,"Gum Roller, cutting knife: 02 hours stopped for mechanical works",120.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-01,A,Making-06,M8-CH-2016-01,md. Shohel,,168000.0,20000.0,2100.0,65.0,9200.0,4600.0,,,,,"Cather Drum, grading: 5 hours stop for mechanical works",300.0,Making Sections,Making-06 (M8-CH-2016-01),OK
+2026-07-01,B,Making-06,M8-CH-2016-01,md. Mamun,,42020.0,8400.0,360.0,20.0,2700.0,400.0,,,,,"Gum nozzle, catcher/grading/rolling drum: 9.5 hours stopped for mechanical & electrical works",570.0,Making Sections,Making-06 (M8-CH-2016-01),OK
+2026-07-01,A,Making-07,,md. Sajib,md. Saiful Islam,286000.0,18000.0,1500.0,45.0,8600.0,5800.0,,,,,Rod heater: 1hr stop mechanical + 20 min stop electrical,80.0,Making Sections,Making-07,OK
+2026-07-01,B,Making-07,,md. Monir,Md. Israfil,334020.0,14900.0,1160.0,35.0,7900.0,4900.0,,,,,Guide jam: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-07 (MK-07),OK
+2026-07-02,A,Making-01,M8-IND-2024-01,md. Nahid(2),md. Saiful Islam,606000.0,35000.0,2100.0,80.0,8900.0,6500.0,,,,,"Gum pot cleaning, rolling guide: 3 hours stop for mechanical work",180.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-02,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,549200.0,19650.0,1200.0,45.0,9700.0,2200.0,,,,,"Pocket Disk, Hydrolic: 2.5 hours stopped for mechanical works",150.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-02,A,Making-02,M8-EN-2017-01,md. Nahid,,651000.0,22000.0,1800.0,60.0,8600.0,2300.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-02,B,Making-02,M8-EN-2017-01,md. Alamgir,,394880.0,22600.0,1800.0,60.0,8900.0,4100.0,,,,,Hopper & Tunk piece: 2.5 hours stopped for mechanical works,150.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-02,A,Making-03,M8-IN-2024-02,md. Muktibul,,818000.0,20000.0,1700.0,55.0,8500.0,2600.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-02,B,Making-03,M8-IN-2024-02,md. Rana,,802800.0,17600.0,1400.0,45.0,9200.0,3900.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-02,A,Making-04,M8-CH-2025-01,md. Rashid,md. Saiful Islam,650000.0,9500.0,900.0,45.0,8200.0,6200.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-02,B,Making-04,M8-CH-2025-01,md. Jabed,Md. Israfil,487200.0,17900.0,1300.0,40.0,9400.0,8700.0,,,,,Running fault made low production,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-02,A,Making-05,M8-IND-2026-01,md. Shofiqul,,840000.0,12500.0,1300.0,50.0,8400.0,4500.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-02,B,Making-05,M8-IND-2026-01,Shodinov,,634900.0,15700.0,980.0,40.0,8020.0,2600.0,,,,,"Gum Roller, Hydrolic & Tunk piece: 1.5 hours stopped for mechanical works",90.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-02,A,Making-07,,Sajib,md. Saiful Islam,166000.0,17000.0,2600.0,65.0,8700.0,4800.0,,,,,"Cather Drum, cutting knife: 6 hours stop for mechanical work",360.0,Making Sections,Making-07,OK
+2026-07-02,B,Making-07,,md. Monir,Md. Israfil,210000.0,18950.0,1200.0,45.0,8100.0,4700.0,,,,,Catcher/Grading Drum & cutting knife; Air circulation: 04 hours stopped for mechanical works,240.0,Making Sections,Making-07 (MK-07),OK
+2026-07-03,A,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,798000.0,29700.0,2140.0,65.0,14700.0,3900.0,,,,,Gum Rollen: 01 hour stopped for mechanical works,60.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-03,B,Making-01,M8-IND-2024-01,md. Nahid(2),md. Saiful Islam,484000.0,18400.0,1130.0,40.0,9700.0,3000.0,,,,,Tiengh piece: 30 mins stop for mechanical work,30.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-03,A,Making-02,M8-EN-2017-01,md. Alamgir,,529200.0,27400.0,2350.0,60.0,13700.0,4120.0,,,,,Filter Rotten & Hopper: 02 hours stopped for mechanical works,120.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-03,B,Making-02,M8-EN-2017-01,md. Nahid,,442000.0,16000.0,1340.0,35.0,10200.0,4000.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-03,A,Making-03,M8-IN-2024-02,md. Rana,,991200.0,20000.0,1350.0,45.0,12600.0,4900.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-03,B,Making-03,M8-IN-2024-02,md. Sabbir,,549000.0,14100.0,1200.0,35.0,10400.0,3700.0,,,,,"Making No.1,2,3: 0.5hr stopped for electricity problem; all making 45min stopped for Jumma prayer",75.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-03,A,Making-04,M8-CH-2025-01,md. Jabed,Md. Israfil,613200.0,21800.0,1600.0,45.0,12200.0,6700.0,,,,,Tunk piece & Gum Roller: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-03,B,Making-04,M8-CH-2025-01,Abdur Rashed,md. Saiful Islam,201000.0,25400.0,2100.0,45.0,10700.0,8000.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-03,A,Making-05,M8-IND-2026-01,Shownov,,969600.0,26600.0,1970.0,50.0,19900.0,4800.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-03,B,Making-05,M8-IND-2026-01,md. Shofiqul,,704000.0,8400.0,780.0,30.0,9900.0,3100.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-03,B,Making-07,,Read,md. Saiful Islam,50000.0,13290.0,3160.0,45.0,7050.0,700.0,,,,,"Catcher/Grading Drum, Vibration spring: 7 hours stop for mechanical work",420.0,Making Sections,Making-07 (MK-07),OK
+2026-07-04,A,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,834320.0,16700.0,1470.0,45.0,10300.0,4200.0,,,,,Cork Knife: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-04,B,Making-01,M8-IND-2024-01,,md. Saiful Islam,415000.0,26000.0,1500.0,55.0,8800.0,8000.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-04,A,Making-02,M8-EN-2017-01,md. Alamgir,,673600.0,23600.0,1500.0,45.0,10600.0,3700.0,,,,,"Cutting Knife, Hopper: 01 hour stopped for mechanical works",60.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-04,B,Making-02,M8-EN-2017-01,md. Nahid,,408000.0,19000.0,1460.0,50.0,8600.0,3800.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-04,A,Making-03,M8-IN-2024-02,md. Rana,,789600.0,18600.0,1700.0,40.0,9700.0,4800.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-04,B,Making-03,M8-IN-2024-02,md. Muktibul,,648000.0,13000.0,900.0,45.0,8700.0,4100.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-04,A,Making-04,M8-CH-2025-01,md. Jabed,Md. Israfil,238000.0,19800.0,1350.0,65.0,9700.0,6200.0,,,,,Running fault made low production,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-04,B,Making-04,M8-CH-2025-01,md. Shohel,md. Saiful Islam,101000.0,19000.0,1400.0,60.0,8900.0,4600.0,,,,,"Long Folder, Tungh piece, Picker Roller: 6 hours stop for mechanical work",360.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-04,A,Making-05,M8-IND-2026-01,Shownov,,924020.0,11800.0,880.0,48.0,19600.0,4020.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-04,B,Making-05,M8-IND-2026-01,md. Shofiqul,,658000.0,9500.0,1100.0,35.0,8000.0,2200.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-05,A,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,222000.0,4200.0,480.0,20.0,3600.0,1100.0,,,,,01 hour stopped for our policy decision of floor management,60.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-05,B,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,215000.0,13700.0,1100.0,45.0,8600.0,4500.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-05,B,Making-02,M8-EN-2017-01,md. Nahid,,504020.0,16000.0,1500.0,55.0,8800.0,2900.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-05,B,Making-03,M8-IN-2024-02,md. Muktibul,,549000.0,14000.0,900.0,40.0,8500.0,3600.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-05,B,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,420000.0,11500.0,900.0,35.0,8000.0,7000.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-05,B,Making-05,M8-IND-2026-01,md. Shofiqul,,420000.0,18000.0,1200.0,50.0,8200.0,3100.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-05,B,Making-07,,md. Sohel,md. Saiful Islam,310800.0,10000.0,800.0,35.0,7800.0,1900.0,,,,,Vibration Tray: 1.5 hours stopped for mechanical works,90.0,Making Sections,Making-07 (MK-07),OK
+2026-07-06,B,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,580000.0,6500.0,900.0,35.0,8000.0,2000.0,,,,,Gum Nozzle: 30 minutes stop for mechanical works,30.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-06,B,Making-02,M8-EN-2017-01,md. Nahid,,,,,,,,,,,,09 hours stop for mechanical works,540.0,Making Sections,Making-02 (M8-EN-2017-01),Missing: Output_Quantity
+2026-07-06,A,Making-03,M8-IN-2024-02,md. Rana,,200900.0,5280.0,380.0,15.0,4900.0,1800.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-06,B,Making-03,M8-IN-2024-02,md. Muktibul,,622000.0,11500.0,800.0,45.0,8600.0,4000.0,,,,,All making 02 hours stop for our policy decision of floor management,120.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-06,B,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,306000.0,9500.0,900.0,30.0,7800.0,5600.0,,,,,1 hour 50 minutes stop for Electrical works,110.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-06,B,Making-05,M8-IND-2026-01,md. Shofiqul,,642000.0,9000.0,1000.0,40.0,8100.0,2260.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-06,B,Making-07,,md. Shohel,md. Saiful Islam,282000.0,21000.0,1700.0,60.0,8800.0,3900.0,,,,,Vibration plate: 1 hour stop for mechanical works,60.0,Making Sections,Making-07 (MK-07),OK
+2026-07-07,B,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,756000.0,12000.0,1200.0,40.0,8600.0,2800.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-07,B,Making-02,M8-EN-2017-01,md. Nahid,,117600.0,17000.0,1200.0,50.0,8900.0,2800.0,,,,,7 hours stop for mechanical work,420.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-07,A,Making-03,M8-IN-2024-02,md. Rana,,211800.0,2900.0,380.0,10.0,2900.0,700.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-07,B,Making-03,M8-IN-2024-02,md. Muktibul,,714000.0,12000.0,1200.0,45.0,8500.0,11000.0,,,,,All making 02 hours stop for our policy decision of floor management,120.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-07,B,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,462000.0,12500.0,1400.0,55.0,8200.0,6000.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-07,B,Making-05,M8-IND-2026-01,md. Shofiqul,,584200.0,9000.0,1200.0,35.0,8100.0,2600.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-07,B,Making-07,,md. Shohel,md. Saiful Islam,252000.0,16000.0,900.0,40.0,8700.0,3100.0,,,,,Tipping Drum: 20 mins stop for mechanical work,20.0,Making Sections,Making-07 (MK-07),OK
+2026-07-08,A,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,780600.0,7800.0,1400.0,35.0,9800.0,2900.0,,,,,Hopper Jam: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-08,B,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,726000.0,12000.0,1100.0,40.0,8200.0,4800.0,,,,,Gum pot: 40 minutes stop for mechanical works,40.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-08,A,Making-02,M8-EN-2017-01,md. Alamgir,,697200.0,11400.0,1470.0,45.0,10300.0,3200.0,,,,,Hopper Drum & Rolling Drum: 1.5 hours stopped for mechanical works,90.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-08,B,Making-02,M8-EN-2017-01,md. Nahid,,574000.0,15000.0,1300.0,50.0,8600.0,2500.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-08,A,Making-03,M8-IN-2024-02,md. Rana,,801600.0,16700.0,1500.0,30.0,9600.0,2900.0,,,,,Hopper jam: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-08,B,Making-03,M8-IN-2024-02,md. Muktibul,,746000.0,18000.0,1400.0,60.0,9100.0,1500.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-08,A,Making-04,M8-CH-2025-01,md. Mamun,Md. Israfil,405000.0,16800.0,1166.0,40.0,9200.0,4700.0,,,,,"Rolling Drum, Gum Roller & Rod Break: 02 hours stopped for mechanical works",120.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-08,B,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,452000.0,17000.0,1500.0,55.0,8900.0,4600.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-08,A,Making-05,M8-IND-2026-01,Shodinov,,410800.0,13500.0,1200.0,35.0,7900.0,4000.0,,,,,Magnate clutch & Electrical works: 2.5 hours stopped for mechanical works,150.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-08,B,Making-05,M8-IND-2026-01,md. Shofiqul,,714000.0,13000.0,1600.0,55.0,9200.0,5160.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-08,A,Making-07,,md. Monin,Md. Israfil,274020.0,24800.0,1650.0,65.0,6300.0,2700.0,,,,,Main Shape capping repair: 04 hours stopped for mechanical works,240.0,Making Sections,Making-07 (MK),OK
+2026-07-08,B,Making-07,,md. Shohel,md. Saiful Islam,294000.0,20000.0,2800.0,65.0,9600.0,3900.0,,,,,Vibration tray: 30 minutes stop for mechanical works,30.0,Making Sections,Making-07 (MK),OK
+2026-07-09,A,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,734200.0,6402.0,1200.0,20.0,8100.0,2200.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-09,B,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,865200.0,9500.0,1300.0,35.0,8100.0,4160.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-09,A,Making-02,M8-EN-2017-01,md. Alamgir,,532800.0,19400.0,1360.0,38.0,7600.0,2700.0,,,,,Hopper Gear & Rod Break: 1.5 hours stopped for mechanical works,90.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-09,B,Making-02,M8-EN-2017-01,md. Nahid,,420000.0,17000.0,1500.0,55.0,8800.0,2200.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-09,A,Making-03,M8-IN-2024-02,md. Rana,,605020.0,18900.0,1400.0,40.0,7900.0,4800.0,,,,,Filter unit & Gum Roller: 01 hour stopped for mechanical works,60.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-09,B,Making-03,M8-IN-2024-02,md. Muktibul,,756000.0,10000.0,1300.0,40.0,8000.0,9000.0,,,,,All making 02 hours stop for our policy decision of floor management,120.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-09,A,Making-04,M8-CH-2025-01,md. Khadiza (H),Md. Israfil,341200.0,13900.0,1160.0,38.0,6800.0,2300.0,,,,,Catcher Drum & Conveyer Belt: 02 hours stopped for mechanical works,120.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-09,B,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,524000.0,16000.0,1200.0,45.0,8900.0,3600.0,,,,,Cork Knife: 0.5 hours stop for mechanical works,30.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-09,A,Making-05,M8-IND-2026-01,Shodinov (H),,517200.0,18600.0,1390.0,35.0,8140.0,2900.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-09,B,Making-05,M8-IND-2026-01,md. Shofiqul,,700000.0,14000.0,1500.0,500.0,8400.0,4600.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-09,A,Making-07,,md. Monin,Md. Israfil,166020.0,29700.0,1800.0,80.0,5790.0,4700.0,,,,,"Cork/cutting knife, Tipping unit & Drum, Hopper: 08 hours stopped for mechanical works",480.0,Making Sections,Making-07 (MK-07),OK
+2026-07-09,B,Making-07,,md. Shohel,md. Saiful Islam,338000.0,18000.0,1400.0,55.0,9000.0,3800.0,,,,,Tungh piece: 2 hours stop mechanical + 0.5 hours stop electrical problem,150.0,Making Sections,Making-07 (MK-07),OK
+2026-07-10,A,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,840000.0,12500.0,1900.0,45.0,13200.0,6100.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-10,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,635200.0,8900.0,780.0,25.0,8200.0,2700.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-10,A,Making-02,M8-EN-2017-01,md. Nahid,,531000.0,15000.0,1600.0,55.0,13400.0,2800.0,,,,,Cutting knife & electrical: 1.5 hours stop for mechanical works,90.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-10,B,Making-02,M8-EN-2017-01,md. Alamgir,,504200.0,18900.0,1150.0,40.0,9700.0,4200.0,,,,,Hopper gear & Rod break: 1 hour stopped for mechanical works,60.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-10,A,Making-03,M8-IN-2024-02,md. Mukhibul,,820000.0,11500.0,1160.0,40.0,13000.0,6000.0,,,,,"Gum Roller, cork knife: 01 hour stopped for mechanical works",60.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-10,B,Making-03,M8-IN-2024-02,md. Rana,,644000.0,12800.0,950.0,25.0,8400.0,3300.0,,,,,All making 45 min stop for Jumma prayer,45.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-10,A,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,566000.0,14000.0,1000.0,50.0,13100.0,3600.0,,,,,"Circular knife, catcher, drum vibration pulley: 02h20m stop for mechanical works",140.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-10,B,Making-04,M8-CH-2025-01,md. Khadiza (H),Md. Israfil,314660.0,9400.0,840.0,38.0,7000.0,1300.0,,,,,Hopper Bearing & Shape: 2.5 hours stopped for mechanical works,150.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-10,A,Making-05,M8-IND-2026-01,md. Nahid(2),,828000.0,9600.0,1100.0,35.0,12800.0,4100.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-10,B,Making-05,M8-IND-2026-01,md. Shoconov (H),,420400.0,18600.0,1300.0,38.0,7900.0,2250.0,,,,,Cutting knife & filter jam: 02 hours stopped for mechanical works,120.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-10,A,Making-07,,md. Jahangir,md. Saiful Islam,325600.0,22000.0,1700.0,60.0,13600.0,7200.0,,,,,"Tipping Roller, cork/cutting knife, catcher drum: 6 hours stop for mechanical work",360.0,Making Sections,Making-07 (MK),OK
+2026-07-10,B,Making-07,,md. Monin,Md. Israfil,276020.0,14300.0,1300.0,45.0,6800.0,1900.0,,,,,,,Making Sections,Making-07 (MK),OK
+2026-07-11,A,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,924000.0,8000.0,1500.0,35.0,8600.0,4000.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-11,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,882020.0,14300.0,920.0,25.0,9400.0,3700.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-11,A,Making-02,M8-EN-2017-01,md. Nahid,,336000.0,21000.0,2000.0,60.0,8900.0,4200.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-11,B,Making-02,M8-EN-2017-01,md. Alamgir,,291820.0,24700.0,1950.0,60.0,8700.0,7900.0,,,,,Cutting knife: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-11,A,Making-03,M8-IN-2024-02,md. Muktibul,,823200.0,16000.0,1300.0,45.0,8200.0,5000.0,,,,,Last drum: 40 minutes stop for mechanical works,40.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-11,B,Making-03,M8-IN-2024-02,md. Rana,,791000.0,16800.0,1250.0,40.0,9200.0,9700.0,,,,,Gum Nozzle: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-11,A,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,504000.0,13000.0,1400.0,50.0,8600.0,4800.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-11,B,Making-04,M8-CH-2025-01,md. Khadiza (H),Md. Israfil,445200.0,19400.0,1600.0,45.0,8600.0,4300.0,,,,,Hopper Jam & Gum Roller: 01 hour stopped for mechanical works,60.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-11,A,Making-05,M8-IND-2026-01,md. Shofiqul,,752000.0,14000.0,1800.0,55.0,8300.0,2180.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-11,B,Making-05,M8-IND-2026-01,Shodinov,,540020.0,21300.0,1450.0,40.0,8200.0,3020.0,,,,,"Cork knife, Tunk pieces, cutting knife: 02 hours stopped for mechanical works",120.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-11,A,Making-07,,Sajib,md. Saiful Islam,420000.0,20000.0,1500.0,65.0,8700.0,5100.0,,,,,02 hours stop for mechanical work,120.0,Making Sections,Making-07 (MK),OK
+2026-07-11,B,Making-07,,md. Sohel,Md. Israfil,512400.0,17700.0,1450.0,35.0,9100.0,3200.0,,,,,Rolling Drum & Hopper: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-07 (MK),OK
+2026-07-13,A,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,813600.0,9500.0,1600.0,35.0,8200.0,4800.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-13,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,788020.0,16300.0,1150.0,30.0,8800.0,2200.0,,,,,Filter unit & cutting knife: 01 hour stopped for mechanical works,60.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-13,A,Making-02,M8-EN-2017-01,md. Nahid,,588000.0,16000.0,1200.0,45.0,8600.0,2100.0,,,,,Cutting knife: 40 minutes stop for mechanical works,40.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-13,B,Making-02,M8-EN-2017-01,md. Alamgir,,771200.0,22600.0,1450.0,45.0,9300.0,3700.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-13,A,Making-03,M8-IN-2024-02,md. Muktibul,,748000.0,17000.0,1400.0,55.0,8900.0,3500.0,,,,,,,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-13,B,Making-03,M8-IN-2024-02,md. Rana,,448020.0,10900.0,780.0,20.0,6350.0,2900.0,,,,,Max clutch Spring Gear: 04 hours stopped for mechanical works,240.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-13,A,Making-04,M8-CH-2025-01,md. Rashid,md. Saiful Islam,294000.0,21000.0,1900.0,60.0,9600.0,6200.0,,,,,"Transfer drum, Gum Roller: 01 hour stop for mechanical works",60.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-13,B,Making-04,M8-CH-2025-01,md. Jabed,Md. Israfil,462000.0,19400.0,1360.0,50.0,8900.0,2800.0,,,,,Catcher Drum & Hopper: 1.5 hours stopped for mechanical works,90.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-13,A,Making-05,M8-IND-2026-01,md. Shofiqul,,800000.0,15000.0,1300.0,50.0,9100.0,3200.0,,,,,Hopper Jam: 02 hours stop for mechanical works,120.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-13,B,Making-05,M8-IND-2026-01,md. Mannan,,840000.0,18600.0,1500.0,55.0,9400.0,3600.0,,,,,Cutting & Gum Roller: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-13,A,Making-07,,md. Hridoy,md. Saiful Islam,336000.0,18000.0,1500.0,65.0,9000.0,4200.0,,,,,Vibration shaft: 02 hours stop for mechanical works,120.0,Making Sections,Making-07 (MK),OK
+2026-07-13,B,Making-07,,md. Shohel,Md. Israfil,463000.0,17700.0,1350.0,40.0,8400.0,3200.0,,,,,"Vibration Spring, cutting knife: 01 hour stopped for mechanical works",60.0,Making Sections,Making-07 (MK),OK
+2026-07-14,A,Making-01,M8-IND-2024-01,md. Jahangir,md. Shobuj,798000.0,13000.0,1000.0,45.0,8600.0,3200.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-14,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,724020.0,13300.0,980.0,30.0,8900.0,1700.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-14,A,Making-02,M8-EN-2017-01,md. Nahid,,823600.0,11000.0,1600.0,40.0,8200.0,2800.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-14,B,Making-02,M8-EN-2017-01,md. Alamgir,,705600.0,9700.0,1250.0,40.0,8800.0,2700.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-14,A,Making-03,M8-IN-2024-02,md. Muktibul,,504000.0,14000.0,1000.0,50.0,8500.0,2600.0,,,,,Filter unit: 3.5 hours stop for mechanical work,210.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-14,B,Making-03,M8-IN-2024-02,md. Rana,,495600.0,16600.0,1280.0,35.0,7600.0,1900.0,,,,,Filter unit & cutting knife: 4.5 hours stopped for mechanical works,270.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-14,A,Making-04,M8-CH-2025-01,md. Rashid,md. Shobuj,546000.0,17000.0,1400.0,55.0,8900.0,3600.0,,,,,Filter unit: 40 minutes stop for mechanical work,40.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-14,B,Making-04,M8-CH-2025-01,md. Mamun,Md. Israfil,590700.0,16900.0,1400.0,51.0,8020.0,4200.0,,,,,Cutting knife: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-14,A,Making-05,M8-IND-2026-01,md. Shofiqul,,840600.0,10500.0,1300.0,35.0,8100.0,2900.0,,,,,,,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-14,B,Making-05,M8-IND-2026-01,md. Khadiza (H),,798000.0,17600.0,1371.0,38.0,9310.0,2100.0,,,,,Circular knife: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-14,A,Making-07,,md. Hridoy,md. Saiful,420000.0,2100.0,1900.0,65.0,8800.0,4200.0,,,,,Rolling Drum: 50 minutes stop for mechanical works,50.0,Making Sections,Making-06 (was Mk-07),OK
+2026-07-14,B,Making-07,,md. Shohel,Md. Israfil,603200.0,18700.0,1100.0,38.0,8700.0,2900.0,,,,,Circular knife: 0.5 hours stopped for mechanical works,30.0,Making Sections,Making-06 (was Mk-07),OK
+2026-07-12,A,Making-01,M8-IND-2024-01,md. Jahangir,md. Saiful Islam,800000.0,10000.0,1200.0,45.0,8900.0,5200.0,,,,,Hopper jam: 40 minutes stop for mechanical work,40.0,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-12,B,Making-01,M8-IND-2024-01,md. Mamun,Md. Israfil,786600.0,16400.0,1200.0,30.0,8900.0,3200.0,,,,,,,Making Sections,Making-01 (M8-IND-2024-01),OK
+2026-07-12,A,Making-02,M8-EN-2017-01,md. Nahid,,403000.0,2400.0,1700.0,65.0,9600.0,3200.0,,,,,SOS plate spring: 40 minutes stop for mechanical work,40.0,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-12,B,Making-02,M8-EN-2017-01,md. Alamgir,,436800.0,16900.0,1400.0,35.0,9100.0,4800.0,,,,,,,Making Sections,Making-02 (M8-EN-2017-01),OK
+2026-07-12,A,Making-03,M8-IN-2024-02,md. Muktibul,,8181000.0,14000.0,1700.0,45.0,8200.0,2180.0,,,,,Catcher drum: 40 minutes stop for mechanical works,40.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-12,B,Making-03,M8-IN-2024-02,md. Rana,,588800.0,11702.0,980.0,30.0,6900.0,2700.0,,,,,Winmen Rollers: 03 hours stopped for mechanical work. B.B.Blast=2000st & DB=2000st sample cig sent to MD sir,180.0,Making Sections,Making-03 (M8-IN-2024-02),OK
+2026-07-12,A,Making-04,M8-CH-2025-01,md. Jabed,md. Saiful Islam,428800.0,215000.0,1900.0,70.0,9800.0,6000.0,,,,,,,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-12,B,Making-04,M8-CH-2025-01,md. Mamun,Md. Israfil,176400.0,11900.0,1800.0,45.0,6500.0,4900.0,,,,,"Catcher Drum, Tipping unit, Rolling Drum: 03 hours stopped for mechanical works",180.0,Making Sections,Making-04 (M8-CH-2025-01),OK
+2026-07-12,A,Making-05,M8-IND-2026-01,md. Shofiqul,,252000.0,9500.0,1200.0,35.0,8000.0,1800.0,,,,,"Cutting knife, tunge piece: 6h40m stop for mechanical work",400.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-12,B,Making-05,M8-IND-2026-01,Shodinov,,508310.0,23600.0,1800.0,60.0,7900.0,2900.0,,,,,"Grading Drum, Twink piece: 03 hours stopped for mechanical works",180.0,Making Sections,Making-05 (M8-IND-2026-01),OK
+2026-07-12,A,Making-07,,md. Hridoy,md. Saiful Islam,420000.0,16000.0,1300.0,40.0,8100.0,21000.0,,,,,Vibration Shaft: 30 minutes stop for mechanical work,30.0,Making Sections,Making-07 (MK),OK
+2026-07-12,B,Making-07,,md. Sohel,Md. Israfil,436800.0,15900.0,1230.0,40.0,7800.0,1900.0,,,,,,,Making Sections,Making-07 (MK),OK
+2026-07-01,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,1020000.0,3500.0,,,,,3160.0,2200.0,1100.0,1600.0,2h30m stop for mechanical work,150.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-01,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Robbani,,740000.0,1900.0,,,,,,,700.0,900.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-01,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahin,,9500.0,6500.0,,,,,3100.0,1400.0,850.0,1300.0,,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-01,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Mostafa / Stamp:Shitat / Wrapper:Aman,,670000.0,3900.0,,,,,3700.0,,600.0,860.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-01,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,850000.0,1600.0,,,,,1700.0,,500.0,900.0,2 hours stop for not available cigarette,120.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-01,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,1180000.0,2800.0,,,,,1450.0,,470.0,850.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-01,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Ismail,,1100000.0,1900.0,,,,,1800.0,,600.0,600.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-01,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Shimul / Stamp:Nunu,,190020.0,600.0,,,,,220.0,,80.0,450.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-01,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Shohag / Stamp:Nazmul / Wrapper:Nazam,,500020.0,7800.0,,,,,790.0,,1170.0,1700.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-02,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,1020000.0,3500.0,,,,,3160.0,2120.0,1100.0,1600.0,2h30m stop for mechanical work,150.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-02,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Robbani,,740000.0,1900.0,,,,,2300.0,,700.0,900.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-02,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahin,,950000.0,5600.0,,,,,2800.0,1400.0,850.0,1200.0,2 hours stopped for mechanical works,120.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-02,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Mostafa / Stamp:Shifat / Wrapper:Aman,,530000.0,1600.0,,,,,850.0,,320.0,750.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-02,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Jamal,,1280000.0,2900.0,,,,,2000.0,,800.0,700.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-02,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,680000.0,2600.0,,,,,3300.0,,480.0,730.0,6 hours stop for not available cigarette,360.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-02,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Ismail,,620000.0,2600.0,,,,,1900.0,,600.0,800.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-02,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Nazmul / Stamp:Shohag,,250000.0,900.0,,,,,1100.0,,210.0,220.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-02,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Shimul / Stamp:Nasin / Wrapper:Shohag,,120000.0,2700.0,,,,,261.0,,250.0,920.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-03,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Nazrul / Bandroll:Rezaul / Wrapper:Shahin,,1330000.0,4000.0,,,,,3700.0,1270.0,780.0,1300.0,01 hour stopped for mechanical work,60.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-03,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Mostafa / Stamp:Shifat / Wrapper:Aman,,870000.0,3300.0,,,,,700.0,,800.0,1100.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-03,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Tamil Ahmed / Bandroll:Rafi / Wrapper:Robbani,,570000.0,2000.0,,,,,2530.0,,610.0,400.0,,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-03,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,1200000.0,2400.0,,,,,2700.0,,700.0,950.0,Wrapper 0.5hr & HLP 1hr stopped for mechanical works,90.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-03,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Romy / Wrapper:Rashed,,240000.0,2100.0,,,,,1630.0,,570.0,510.0,7 hours stop for not available cigarette,420.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-03,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Rasel / Stamp:Nunu / Wrapper:Rashidu,,450020.0,6000.0,,,,,1400.0,,370.0,600.0,08 hours stopped for unavailable cigarette,480.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-03,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Ismail,,750000.0,2300.0,,,,,1180.0,,570.0,440.0,2 hours stop for not available cigarette,120.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-04,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahin,,1260000.0,3100.0,,,,,2900.0,1220.0,861.0,1700.0,,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-04,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Mostafa / Stamp:Shifat / Wrapper:Aman,,880020.0,2200.0,,,,,1600.0,,220.0,1220.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-04,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,180020.0,1600.0,,,,,1100.0,,800.0,900.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-04,B,HLP 10 Set-02,HL10-CH-2026-01-BM,HLP:Hazrat / Stamp:Tarek / Wrapper:Jamal,,310020.0,1900.0,,,,,1800.0,,600.0,600.0,,,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-01-BM),OK
+2026-07-04,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,110000.0,1300.0,,,,,700.0,,340.0,700.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-04,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Rasel / Stamp:Ibrahim / Wrapper:Rashidu,,340000.0,900.0,,,,,1400.0,,291.0,600.0,9 hours stopped for unavailable cigarette,540.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-04,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,270000.0,1700.0,,,,,1600.0,,500.0,600.0,7 hours stop for not available cigarette,420.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-04,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Ismail / Wrapper:Tuhin,,900000.0,1400.0,,,,,1100.0,,400.0,450.0,2 hours stop for not available cigarette,120.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-05,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Torjul / Bandroll:Enamul / Wrapper:Rubel,,780000.0,3200.0,,,,,3100.0,1900.0,800.0,900.0,,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-05,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Robbani,,320000.0,3100.0,,,,,300.0,,800.0,850.0,0/Wrapper 03 hours stopped for mechanical works,180.0,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-05,B,HLP 10 Set-02,HL10-CH-2026-02-BM,HLP:Jamal / Stamp:Tanele / Wrapper:Hoznat,,510000.0,2600.0,,,,,1500.0,,400.0,650.0,,,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-02-BM),OK
+2026-07-05,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,790500.0,1900.0,,,,,1800.0,,800.0,900.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-05,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Ismail,,160000.0,2200.0,,,,,1600.0,,700.0,500.0,08 hours stopped for unavailable cigarette,480.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-06,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,1030000.0,2400.0,,,,,2100.0,1400.0,900.0,1300.0,,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-06,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Robbani,,230000.0,1200.0,,,,,1300.0,,500.0,600.0,The production has been low for our policy decision of floor management,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-06,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,910000.0,2600.0,,,,,2200.0,,800.0,600.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-06,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Ismail / Wrapper:Tuhin,,260000.0,2200.0,,,,,1900.0,,700.0,700.0,07 hours stop for unavailable cigarette,420.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-07,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahin,,110000.0,1200.0,,,,,720.0,310.0,230.0,440.0,11 hours stopped for our policy decision of floor management,660.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-07,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,870000.0,3800.0,,,,,4100.0,2100.0,1100.0,1400.0,1h20m stop for mechanical work,80.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-07,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Robbani,,510000.0,1900.0,,,,,2100.0,,600.0,900.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-07,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,100000.0,600.0,,,,,541.0,,180.0,280.0,11 hours stopped for our policy decision of floor management,660.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-07,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,510000.0,3500.0,,,,,4200.0,,1300.0,1100.0,1h30m stop for mechanical work,90.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-07,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Tuhin / Stamp:Ismail,,540000.0,2000.0,,,,,1600.0,,600.0,700.0,1hr stop mechanical + 2.5 hrs stop for unavailable cigarette,210.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-07,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Hazrat / Stamp:Jamal / Wrapper:Tarek,,360000.0,4600.0,,,,,460.0,,490.0,700.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-08,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahin,,1200000.0,3300.0,,,,,2800.0,1300.0,1100.0,1900.0,0.5 hours stopped for mechanical works,30.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-08,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Mostafa / Stamp:Shifat / Wrapper:Aman,,770000.0,2900.0,,,,,3400.0,,950.0,1300.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-08,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,1180000.0,3400.0,,,,,2500.0,1700.0,700.0,1200.0,,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-08,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Tanjil / Stamp:Robbani / Wrapper:Rafi,,670000.0,2500.0,,,,,2800.0,,800.0,1000.0,Wrapper 02 hours stop for mechanical works,120.0,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-08,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,1110000.0,1600.0,,,,,2100.0,,560.0,1100.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-08,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Rasel / Stamp:Ibrahim / Wrapper:Rashidu,,350000.0,2400.0,,,,,2350.0,,620.0,380.0,08 hours stopped for unavailable cigarette,480.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-08,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,810000.0,2100.0,,,,,2400.0,,700.0,700.0,02 hours stop for mechanical works,120.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-08,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Tuhin / Stamp:Rubel,,570000.0,3600.0,,,,,4200.0,,1000.0,800.0,06 hours stop for unavailable cigarette,360.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-08,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Jamal / Stamp:Tarek / Wrapper:Haznat,,300000.0,4800.0,,,,,730.0,,840.0,500.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-09,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahin,,530000.0,2700.0,,,,,1700.0,650.0,620.0,1800.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-09,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Rasel / Stamp:Ibrahim / Wrapper:Rashidu,,630020.0,4100.0,,,,,5300.0,,630.0,900.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-09,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,120000.0,600.0,,,,,500.0,300.0,200.0,150.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-09,B,HLP 10 Set-02,HL10-CH-2026-02-BM,HLP:Enamul / Stamp:Abir / Wrapper:Rubel,,700000.0,2100.0,,,,,1600.0,,500.0,900.0,Wrapper 01 hour stop for mechanical works,60.0,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-02-BM),OK
+2026-07-09,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,1000020.0,1400.0,,,,,1900.0,,390.0,850.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-09,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Rasel / Stamp:Ibrahim / Wrapper:Rashidu,,630020.0,1600.0,,,,,2700.0,,430.0,650.0,02 hours stopped for not available cigarette,120.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-09,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rony / Wrapper:Rashed,,1020000.0,1600.0,,,,,1700.0,,600.0,600.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-09,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Tuhin / Stamp:Taijul,,820000.0,2400.0,,,,,4200.0,,800.0,800.0,3 hours stop for unavailable cigarette,180.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-09,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Hazrof / Stamp:Jamal / Wrapper:Tarek,,420000.0,4300.0,,,,,605.0,,820.0,600.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-10,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,790000.0,1800.0,,,,,1900.0,1100.0,700.0,1500.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-10,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Rafi,,970000.0,2900.0,,,,,2150.0,,800.0,900.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-10,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahim,,200000.0,1100.0,,,,,850.0,270.0,220.0,400.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-10,B,HLP 10 Set-02,HL10-CH-2026-02-BM,HLP:Mostafa / Stamp:Shifat / Wrapper:Aman,,580000.0,2160.0,,,,,2300.0,,550.0,720.0,0/Wrapper 05 hours stop for mechanical work,300.0,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-02-BM),OK
+2026-07-10,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed,,1450000.0,2400.0,,,,,2100.0,,700.0,800.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-10,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Jamal / Stamp:Tarek,,640000.0,3160.0,,,,,3000.0,,900.0,1100.0,8 hours stop for not available cigarette,480.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-10,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Nazir,,950000.0,2700.0,,,,,2900.0,,480.0,570.0,03 hours stop for not available cigarette + 01 hour mechanical work,240.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-10,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Nazmul / Stamp:Nunu,,270000.0,2300.0,,,,,2100.0,,430.0,450.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-10,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Shimul / Stamp:Shohag / Wrapper:Rashidul,,340000.0,2800.0,,,,,506.0,,790.0,550.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-11,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,800000.0,2200.0,,,,,1900.0,1100.0,600.0,1100.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-11,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Rony,,820000.0,3900.0,,,,,3600.0,,800.0,900.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-11,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul,,414000.0,1100.0,,,,,970.0,380.0,320.0,420.0,03 hours stopped for mechanical work,180.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-11,B,HLP 10 Set-02,HL10-CH-2026-02-BM,HLP:Ibrahim / Stamp:Nunu / Wrapper:Shahrion,,450000.0,2600.0,,,,,3100.0,,630.0,800.0,,,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-02-BM),OK
+2026-07-11,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Tarek / Wrapper:Rashed,,1015000.0,3000.0,,,,,5100.0,,700.0,500.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-11,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Hazrot / Wrapper:Tuhin,,1170000.0,2400.0,,,,,3150.0,,1000.0,800.0,08 hours stopped for unavailable cigarette,480.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-11,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Shopon / Wrapper:Mozid,,1080000.0,3200.0,,,,,2400.0,,540.0,700.0,0.5 hours stopped for mechanical works,30.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-11,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Jamal / Stamp:Nunu / Wrapper:Shohag,,10000.0,100.0,,,,,33.0,,55.0,31.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-13,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,670000.0,2900.0,,,,,2100.0,1900.0,600.0,800.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-13,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Rafi,,700000.0,3000.0,,,,,4800.0,,600.0,700.0,Wrapper 30 minutes stop for mechanical work,30.0,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-13,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahim,,1030000.0,3800.0,,,,,2300.0,1100.0,750.0,800.0,01 hour stop for mechanical work,60.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-13,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Mostafa / Stamp:Shitat / Wrapper:Aman,,700000.0,3200.0,,,,,3900.0,,650.0,700.0,Hours stop for mechanical work,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-13,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,1000000.0,2200.0,,,,,1900.0,,600.0,600.0,40 minutes stop for mechanical works,40.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-13,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Hazrot,,1170000.0,2800.0,,,,,2600.0,,700.0,700.0,Wrapper 30 minutes stop for mechanical work,30.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-13,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Rasin / Wrapper:Mozid,,1120000.0,2400.0,,,,,3600.0,,520.0,800.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-13,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Rasel / Stamp:Ibrahim / Wrapper:Nunu,,700000.0,1900.0,,,,,3200.0,,650.0,900.0,04 hours stop for not available cigarette,240.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-13,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Jamal / Stamp:Shopon / Wrapper:Shimul,,160000.0,900.0,,,,,317.0,,208.0,420.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-14,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,770000.0,21700.0,,,,,1900.0,1200.0,600.0,1200.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-14,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Rafi,,700000.0,3000.0,,,,,3200.0,,600.0,700.0,Wrapper 40 minutes stop for mechanical work,40.0,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-14,A,HLP 10 Set-02,HL10-CH-2026-01-BM,HLP:Tarek / Stamp:Taijul / Wrapper:Rubel,,100000.0,1200.0,,,,,1400.0,,400.0,500.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-01-BM),OK
+2026-07-14,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahim,,1030000.0,3900.0,,,,,2300.0,1100.0,750.0,1900.0,02 hours stopped for our policy decision of floor management,120.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-14,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Rasel / Stamp:Nunu / Wrapper:Ibrahim,,770000.0,2100.0,,,,,3600.0,,590.0,1100.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-14,B,HLP 10 Set-02,HL10-CH-2026-02-BM,HLP:Mostafa / Stamp:Shitat / Wrapper:Aman,,150000.0,2100.0,,,,,1100.0,,370.0,390.0,09 hours stopped for our policy decision of floor management,540.0,Duplex & HLP Pack,HLP 10 Set-02 (HL10-CH-2026-02-BM),OK
+2026-07-14,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,940000.0,3100.0,,,,,4500.0,,900.0,600.0,03 hours stop for unavailable cigarette,180.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-14,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Hazrat,,1400000.0,2000.0,,,,,4100.0,,800.0,900.0,Over wrapper 0.5 hours stop for mechanical work,30.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-14,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Mozid / Wrapper:Shopon,,1130000.0,2200.0,,,,,4300.0,,800.0,700.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-14,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Ebrahim / Stamp:Nasin / Wrapper:Rashidu,,830000.0,1600.0,,,,,2200.0,,330.0,180.0,03 hours stopped for not available cigarette,180.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-14,B,HLP 20 Set-03 Seal Pack,HL20R-CH-2025-01-BM,HLP:Jamal / Stamp:Shopon / Wrapper:Shohag,,230000.0,900.0,,,,,597.0,,293.0,960.0,,,Duplex & HLP Pack,HLP 20 Set-03 Seal Pack (HL20R-CH-2025-01-BM),OK
+2026-07-12,A,Duplex Set,SS-IN-2015-01-BM,Duplex:Taijul / Bandroll:Enamul / Wrapper:Rubel,,500000.0,3200.0,,,,,4100.0,2600.0,1300.0,1300.0,Production has been low for our policy decision of floor management,,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-12,A,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Momin / Stamp:Tanjil / Wrapper:Rafi,,8001000.0,21600.0,,,,,3500.0,,800.0,900.0,2.5 hours stopped for mechanical works,150.0,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-12,B,Duplex Set,SS-IN-2015-01-BM,Duplex:Shakil / Bandroll:Rezaul / Wrapper:Shahim,,4140000.0,2300.0,,,,,2700.0,850.0,720.0,650.0,2.5 hours stopped for mechanical works & 4.5 hours for unavailable cigarette,420.0,Duplex & HLP Pack,Duplex Set (SS-IN-2015-01-BM),OK
+2026-07-12,B,HLP 10 Set-01,HL10-CH-2015-01-BM,HLP:Rasel / Stamp:Shahin / Wrapper:Shahnian,,520000.0,2200.0,,,,,2400.0,,620.0,700.0,,,Duplex & HLP Pack,HLP 10 Set-01 (HL10-CH-2015-01-BM),OK
+2026-07-12,A,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Ikbal / Stamp:Rashed / Wrapper:Rony,,6801000.0,2900.0,,,,,3000.0,,900.0,800.0,04 hours stop for unavailable cigarette,240.0,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-12,A,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:D.Islam / Stamp:Tuhin / Wrapper:Hazrot,,11701000.0,2400.0,,,,,3150.0,,1000.0,800.0,5.5 hours stopped for unavailable cigarette,330.0,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK
+2026-07-12,B,HLP 20 Set-01,HL20-CH-2015-01-BM,HLP:Monsun / Stamp:Shopon / Wrapper:Mozid,,1080000.0,3200.0,,,,,2400.0,,540.0,700.0,,,Duplex & HLP Pack,HLP 20 Set-01 (HL20-CH-2015-01-BM),OK
+2026-07-12,B,HLP 20 Set-02,HL-SG-2025-01-BM,HLP:Jamal / Stamp:Nunu / Wrapper:Shohag,,10000.0,100.0,,,,,33.0,,55.0,31.0,,,Duplex & HLP Pack,HLP 20 Set-02 (HL-SG-2025-01-BM),OK

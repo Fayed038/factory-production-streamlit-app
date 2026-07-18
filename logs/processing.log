@@ -1,0 +1,266 @@
+2026-07-15 12:23:10,208 [INFO] Processed C:\factory_production_system\uploads\Production_Log_01-12_July_2026.xlsx: 0 rows
+2026-07-15 12:23:10,404 [INFO] Master Excel exported to C:\factory_production_system\data\Master_Production_Report.xlsx
+2026-07-15 12:24:34,524 [ERROR] Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-07-15 12:36:54,280 [INFO] Sheet 'Daily_Balances' in 'Production_Log_01-12_July_2026.xlsx' skipped (reference/notes sheet, not production data).
+2026-07-15 12:36:54,280 [INFO] Sheet 'Notes' in 'Production_Log_01-12_July_2026.xlsx' skipped (reference/notes sheet, not production data).
+2026-07-15 12:36:54,320 [INFO] Processed C:\factory_production_system\uploads\Production_Log_01-12_July_2026.xlsx: 190 rows
+2026-07-15 12:36:55,003 [INFO] Master Excel exported to C:\factory_production_system\data\Master_Production_Report.xlsx
+2026-07-15 12:46:47,976 [INFO] Sheet 'Daily_Balances' in 'Production_Log_01-12_July_2026.xlsx' skipped (reference/notes sheet, not production data).
+2026-07-15 12:46:47,977 [INFO] Sheet 'Notes' in 'Production_Log_01-12_July_2026.xlsx' skipped (reference/notes sheet, not production data).
+2026-07-15 12:46:48,006 [INFO] Processed C:\factory_production_system\uploads\Production_Log_01-12_July_2026.xlsx: 190 rows
+2026-07-15 12:46:48,615 [INFO] Master Excel exported to C:\factory_production_system\data\Master_Production_Report.xlsx
+2026-07-15 12:58:14,079 [INFO] Sheet 'Daily_Balances' in 'Production_Log_01-12_July_2026.xlsx' skipped (reference/notes sheet, not production data).
+2026-07-15 12:58:14,079 [INFO] Sheet 'Notes' in 'Production_Log_01-12_July_2026.xlsx' skipped (reference/notes sheet, not production data).
+2026-07-15 12:58:14,117 [INFO] Processed C:\factory_production_system\uploads\Production_Log_01-12_July_2026.xlsx: 190 rows
+2026-07-15 12:58:15,032 [INFO] Master Excel exported to C:\factory_production_system\data\Master_Production_Report.xlsx
+2026-07-15 13:38:35,975 [ERROR] Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-07-16 16:01:36,496 [ERROR] Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-07-16 23:53:43,671 [ERROR] Traceback (most recent call last):
+  File "C:\factory_production_system\data_processor.py", line 275, in process_files
+    frames.append(self.clean_data(raw))
+                  ~~~~~~~~~~~~~~~^^^^^
+  File "C:\factory_production_system\data_processor.py", line 202, in clean_data
+    df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 938, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1953, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1997, in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 2181, in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 1528, in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 607, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 445, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\blocks.py", line 1667, in setitem
+    values[indexer] = value
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\arrow\array.py", line 2237, in __setitem__
+    value = self._maybe_convert_setitem_value(value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\string_arrow.py", line 301, in _maybe_convert_setitem_value
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Invalid value for dtype 'str'. Value should be a string or missing value (or array of those).
+
+2026-07-17 00:21:11,842 [ERROR] Traceback (most recent call last):
+  File "C:\factory_production_system\data_processor.py", line 275, in process_files
+    frames.append(self.clean_data(raw))
+                  ~~~~~~~~~~~~~~~^^^^^
+  File "C:\factory_production_system\data_processor.py", line 202, in clean_data
+    df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 938, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1953, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1997, in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 2181, in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 1528, in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 607, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 445, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\blocks.py", line 1667, in setitem
+    values[indexer] = value
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\arrow\array.py", line 2237, in __setitem__
+    value = self._maybe_convert_setitem_value(value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\string_arrow.py", line 301, in _maybe_convert_setitem_value
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Invalid value for dtype 'str'. Value should be a string or missing value (or array of those).
+
+2026-07-17 00:21:19,851 [ERROR] Traceback (most recent call last):
+  File "C:\factory_production_system\data_processor.py", line 275, in process_files
+    frames.append(self.clean_data(raw))
+                  ~~~~~~~~~~~~~~~^^^^^
+  File "C:\factory_production_system\data_processor.py", line 202, in clean_data
+    df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 938, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1953, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1997, in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 2181, in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 1528, in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 607, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 445, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\blocks.py", line 1667, in setitem
+    values[indexer] = value
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\arrow\array.py", line 2237, in __setitem__
+    value = self._maybe_convert_setitem_value(value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\string_arrow.py", line 301, in _maybe_convert_setitem_value
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Invalid value for dtype 'str'. Value should be a string or missing value (or array of those).
+
+2026-07-17 00:21:30,443 [ERROR] Traceback (most recent call last):
+  File "C:\factory_production_system\data_processor.py", line 275, in process_files
+    frames.append(self.clean_data(raw))
+                  ~~~~~~~~~~~~~~~^^^^^
+  File "C:\factory_production_system\data_processor.py", line 202, in clean_data
+    df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 938, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1953, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1997, in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 2181, in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 1528, in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 607, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 445, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\blocks.py", line 1667, in setitem
+    values[indexer] = value
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\arrow\array.py", line 2237, in __setitem__
+    value = self._maybe_convert_setitem_value(value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\string_arrow.py", line 301, in _maybe_convert_setitem_value
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Invalid value for dtype 'str'. Value should be a string or missing value (or array of those).
+
+2026-07-17 00:54:25,227 [ERROR] Traceback (most recent call last):
+  File "C:\factory_production_system\data_processor.py", line 464, in process_files
+    frames.append(self.clean_data(raw))
+                  ~~~~~~~~~~~~~~~^^^^^
+  File "C:\factory_production_system\data_processor.py", line 393, in clean_data
+    df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 938, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1953, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1997, in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 2181, in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 1528, in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 607, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 445, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\blocks.py", line 1667, in setitem
+    values[indexer] = value
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\arrow\array.py", line 2237, in __setitem__
+    value = self._maybe_convert_setitem_value(value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\string_arrow.py", line 301, in _maybe_convert_setitem_value
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Invalid value for dtype 'str'. Value should be a string or missing value (or array of those).
+
+2026-07-17 14:24:31,329 [ERROR] Traceback (most recent call last):
+  File "C:\factory_production_system\data_processor.py", line 464, in process_files
+    frames.append(self.clean_data(raw))
+                  ~~~~~~~~~~~~~~~^^^^^
+  File "C:\factory_production_system\data_processor.py", line 393, in clean_data
+    df.loc[blank_name, "Machine_Name"] = df.loc[blank_name, "Machine_Code"].apply(
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 938, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1953, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 1997, in _setitem_with_indexer_split_path
+    self._setitem_single_column(ilocs[0], value, pi)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\indexing.py", line 2181, in _setitem_single_column
+    self.obj._mgr.column_setitem(loc, plane_indexer, value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 1528, in column_setitem
+    new_mgr = col_mgr.setitem((idx,), value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 607, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\managers.py", line 445, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\internals\blocks.py", line 1667, in setitem
+    values[indexer] = value
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\arrow\array.py", line 2237, in __setitem__
+    value = self._maybe_convert_setitem_value(value)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\arrays\string_arrow.py", line 301, in _maybe_convert_setitem_value
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Invalid value for dtype 'str'. Value should be a string or missing value (or array of those).
+

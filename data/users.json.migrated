@@ -1,0 +1,23 @@
+{
+  "users": {
+    "admin": {
+      "password_hash": "0a49f9eb8bf176d60d0acb4b804a42d69e79d1c96605232d5f6f2f47c8d4a458",
+      "salt": "23ca9e774edf52ef3659e57447d47b2c",
+      "role": "Admin",
+      "created_at": "2026-07-15T12:11:08.097069",
+      "created_by": "system",
+      "active": true,
+      "display_name": "Lone_wolf",
+      "permissions": {
+        "view_dashboard": true,
+        "enter_data": true,
+        "view_reports": true,
+        "export_reports": true,
+        "manage_users": true,
+        "delete_data": true,
+        "approve_data": true,
+        "change_settings": true
+      }
+    }
+  }
+}
