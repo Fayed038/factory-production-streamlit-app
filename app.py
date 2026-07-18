@@ -1066,6 +1066,9 @@ def upload_page():
                             source_file=", ".join(os.path.basename(p) for p in saved)
                         )
                 except DataProcessingError as e:
+                    except Exception as e:
+                    st.exception(e)
+                    return
                     st.error(f"❌ {e}")
                     return
             st.success(f"✅ Done. Master dataset: {len(combined)} records.")
