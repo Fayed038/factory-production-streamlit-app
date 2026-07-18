@@ -104,18 +104,20 @@ class GSheetsWrapper:
                     'created_at': [datetime.now().isoformat()],
                     'created_by': ['system']
                 })
-                self.conn.write(dataframe=admin_data, sheet_name=self.users_sheet)
+                self.write_sheet(admin_data, self.users_sheet)
             
             # Create production sheet if it doesn't exist
             if self.production_sheet not in existing_sheets:
                 prod_data = pd.DataFrame(columns=[
-                    'date', 'machine_code', 'machine_type', 'shift', 'operator',
-                    'supervisor', 'output', 'waste_cigarette', 'waste_paper',
-                    'waste_tipping', 'dust', 'stem', 'total_waste_grams',
-                    'waste_percentage', 'efficiency', 'oee', 'downtime_reason',
-                    'downtime_hours', 'source_file', 'entered_by', 'entered_at'
+                    "Date", "Shift", "Machine_Name", "Machine_Code", "Operator", "Supervisor",
+                    "Output_Quantity", "Wastage_Cigarette", "Wastage_Paper",
+                    "Wastage_Tipping_Paper", "Dust", "Stem",
+                    "Wastage_Shell_Blanket", "Wastage_Slide_AluFoil",
+                    "Wastage_AluFoil_InnerFrame", "Wastage_BOPP",
+                    "Stoppage_Reason", "Stoppage_Duration_Min", "Report_Type",
+                    "Data_Quality_Flag", "Machine_Label"
                 ])
-                self.conn.write(dataframe=prod_data, sheet_name=self.production_sheet)
+                self.write_sheet(prod_data, self.production_sheet)
             
             # Create audit log sheet if it doesn't exist
             if self.audit_sheet not in existing_sheets:
@@ -123,7 +125,7 @@ class GSheetsWrapper:
                     'timestamp', 'username', 'action', 'table_name',
                     'record_id', 'old_values', 'new_values'
                 ])
-                self.conn.write(dataframe=audit_data, sheet_name=self.audit_sheet)
+                self.write_sheet(audit_data, self.audit_sheet)
                 
         except Exception as e:
             logging.error(f"Failed to initialize sheets: {e}")
@@ -932,8 +934,6 @@ def dashboard_page():
         if st.button("🎲 Generate Sample Data"):
             sdf = generate_sample_data()
             save_data(sdf)
-            prod_db.upsert_from_df(sdf, entered_by=st.session_state.username or "system",
-                                   source_file="sample_data")
             st.success("Sample data loaded!")
             st.rerun()
         return
@@ -1058,13 +1058,6 @@ def upload_page():
                 try:
                     combined = proc.process_files(saved, existing_df=existing)
                     save_data(combined)
-                    # Also write to Google Sheets if available
-                    if gsheets:
-                        prod_db.upsert_from_df(
-                            combined,
-                            entered_by=st.session_state.username or "system",
-                            source_file=", ".join(os.path.basename(p) for p in saved)
-                        )
                 except DataProcessingError as e:
                     st.error(f"❌ {e}")
                     return
