@@ -183,6 +183,7 @@ class GSheetsSecurityManager:
         if not self.gsheets:
             return pd.DataFrame()
         df = self.gsheets.read_sheet(self.users_sheet)
+        df = df.fillna('')
         if df.empty:
             # Create default admin if empty
             df = pd.DataFrame({
