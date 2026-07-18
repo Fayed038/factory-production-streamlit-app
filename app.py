@@ -1066,21 +1066,21 @@ def upload_page():
                             source_file=", ".join(os.path.basename(p) for p in saved)
                         )
                 except DataProcessingError as e:
-                    except Exception as e:
-                    st.exception(e)
-                    return
                     st.error(f"❌ {e}")
                     return
-            st.success(f"✅ Done. Master dataset: {len(combined)} records.")
-            if proc.warnings:
-                with st.expander(f"⚠️ {len(proc.warnings)} warning(s)"):
-                    for w in proc.warnings:
-                        st.write(f"- {w}")
-            if proc.errors:
-                with st.expander(f"❌ {len(proc.errors)} error(s)"):
-                    for e in proc.errors:
-                        st.write(f"- {e}")
-            st.dataframe(combined.tail(30), use_container_width=True)
+                except Exception as e:
+                    st.exception(e)
+                    return
+                st.success(f"✅ Done. Master dataset: {len(combined)} records.")
+                if proc.warnings:
+                    with st.expander(f"⚠️ {len(proc.warnings)} warning(s)"):
+                        for w in proc.warnings:
+                            st.write(f"- {w}")
+                if proc.errors:
+                    with st.expander(f"❌ {len(proc.errors)} error(s)"):
+                        for e in proc.errors:
+                            st.write(f"- {e}")
+                st.dataframe(combined.tail(30), use_container_width=True)
 
     # Delete Data (soft delete)
     if has_perm("delete_data"):
