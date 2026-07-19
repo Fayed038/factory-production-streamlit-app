@@ -144,12 +144,8 @@ class GSheetsWrapper:
         """Write a DataFrame to Google Sheets."""
         if not self.conn:
             return False
-        try:
-            self.conn.update(worksheet=sheet_name, data=df)
-            return True
-        except Exception as e:
-            logging.error(f"Failed to write to sheet {sheet_name}: {e}")
-            return False
+        self.conn.update(worksheet=sheet_name, data=df)
+        return True
     
     def append_to_sheet(self, df: pd.DataFrame, sheet_name: str) -> bool:
         """Append data to an existing sheet."""
