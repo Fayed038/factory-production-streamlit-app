@@ -88,11 +88,23 @@ class GSheetsWrapper:
             return
 
         def _sheet_exists(name):
+            """শুধু নিশ্চিতভাবে 'sheet পাওয়া যায়নি' টাইপ error হলেই 
+            False রিটার্ন করে। অন্য যেকোনো error (network glitch, 
+            timeout ইত্যাদি) হলে ধরে নেবে sheet আছে — যাতে ভুলে 
+            আসল ডেটা মুছে না যায়।"""
             try:
                 self.conn.read(worksheet=name, ttl=0)
                 return True
-            except Exception:
-                return False
+            except Exception as e:
+                error_text = str(e).lower()
+                not_found_markers = ("worksheetnotfound", "not found", "no sheet named")
+                if any(marker in error_text for marker in not_found_markers):
+                    return False
+                logging.error(
+                    f"_sheet_exists: '{name}' sheet-এর status নিশ্চিত করা যায়নি ({e}) "
+                    f"— data loss এড়াতে ধরে নেওয়া হচ্ছে sheet-টা আছে।"
+                )
+                return True
 
         try:
             # Create users sheet if it doesn't exist
@@ -173,7 +185,16 @@ class GSheetsWrapper:
             return False
 
 # Initialize Google Sheets wrapper
-gsheets = GSheetsWrapper() if st.secrets.get("connections") else None
+@st.cache_resource
+def get_gsheets_wrapper():
+    """Google Sheets wrapper শুধু একবার তৈরি হবে (cached), 
+    প্রতি rerun-এ নতুন করে তৈরি হবে না — এতে _init_sheets() 
+    বারবার চলে sheet ওভাররাইট হওয়ার ঝুঁকি থাকবে না।"""
+    if st.secrets.get("connections"):
+        return GSheetsWrapper()
+    return None
+
+gsheets = get_gsheets_wrapper()
 
 # ======================================================================== #
 # SECURITY MANAGER (Google Sheets Version)
