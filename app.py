@@ -141,10 +141,14 @@ class GSheetsWrapper:
             return pd.DataFrame()
 
     def write_sheet(self, df: pd.DataFrame, sheet_name: str) -> bool:
-        """Write a DataFrame to Google Sheets."""
+        """Write a DataFrame to Google Sheets. Creates the worksheet if it doesn't exist."""
         if not self.conn:
             return False
-        self.conn.update(worksheet=sheet_name, data=df)
+        try:
+            self.conn.update(worksheet=sheet_name, data=df)
+        except Exception:
+            # Worksheet probably doesn't exist yet — create it instead.
+            self.conn.create(worksheet=sheet_name, data=df)
         return True
     
     def append_to_sheet(self, df: pd.DataFrame, sheet_name: str) -> bool:
