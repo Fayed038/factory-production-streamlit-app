@@ -82,16 +82,21 @@ class GSheetsWrapper:
         self._init_sheets()
     
     def _init_sheets(self):
-        """Initialize sheets if they don't exist."""
+        """Initialize sheets if they don't exist (checked one by one, since
+        GSheetsConnection has no get_sheet_names() method)."""
         if not self.conn:
             return
-        
+
+        def _sheet_exists(name):
+            try:
+                self.conn.read(worksheet=name, ttl=0)
+                return True
+            except Exception:
+                return False
+
         try:
-            # Check if sheets exist by trying to read them
-            existing_sheets = self.conn.get_sheet_names()
-            
             # Create users sheet if it doesn't exist
-            if self.users_sheet not in existing_sheets:
+            if not _sheet_exists(self.users_sheet):
                 # Create with default admin user
                 admin_data = pd.DataFrame({
                     'username': ['admin'],
@@ -105,9 +110,9 @@ class GSheetsWrapper:
                     'created_by': ['system']
                 })
                 self.write_sheet(admin_data, self.users_sheet)
-            
+
             # Create production sheet if it doesn't exist
-            if self.production_sheet not in existing_sheets:
+            if not _sheet_exists(self.production_sheet):
                 prod_data = pd.DataFrame(columns=[
                     "Date", "Shift", "Machine_Name", "Machine_Code", "Operator", "Supervisor",
                     "Output_Quantity", "Wastage_Cigarette", "Wastage_Paper",
@@ -118,15 +123,15 @@ class GSheetsWrapper:
                     "Data_Quality_Flag", "Machine_Label"
                 ])
                 self.write_sheet(prod_data, self.production_sheet)
-            
+
             # Create audit log sheet if it doesn't exist
-            if self.audit_sheet not in existing_sheets:
+            if not _sheet_exists(self.audit_sheet):
                 audit_data = pd.DataFrame(columns=[
                     'timestamp', 'username', 'action', 'table_name',
                     'record_id', 'old_values', 'new_values'
                 ])
                 self.write_sheet(audit_data, self.audit_sheet)
-                
+
         except Exception as e:
             logging.error(f"Failed to initialize sheets: {e}")
     
