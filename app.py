@@ -190,24 +190,18 @@ class GSheetsSecurityManager:
         """Get users DataFrame from Google Sheets."""
         if not self.gsheets:
             return pd.DataFrame()
-        df = self.gsheets.read_sheet(self.users_sheet)
+        try:
+            df = self.gsheets.read_sheet(self.users_sheet)
+        except Exception as e:
+            logging.error(f"Failed to read users sheet: {e}")
+            return pd.DataFrame()
         df = df.fillna('')
-        if df.empty:
-            # Create default admin if empty
-            _admin_salt = secrets.token_hex(16)
-            _admin_hash = hashlib.sha256((_admin_salt + "admin123").encode("utf-8")).hexdigest()
-            df = pd.DataFrame({
-                'username': ['admin'],
-                'password_hash': [_admin_hash],
-                'salt': [_admin_salt],
-                'display_name': ['Administrator (Admin)'],
-                'role': ['Admin'],
-                'permissions': [json.dumps(ROLE_DEFAULTS["Admin"])],
-                'is_active': [1],
-                'created_at': [datetime.now().isoformat()],
-                'created_by': ['system']
-            })
-            self.gsheets.write_sheet(df, self.users_sheet)
+        # NOTE: We deliberately do NOT auto-recreate/overwrite the users
+        # sheet here anymore. The sheet is created once with a default
+        # admin in _init_sheets() at startup. If a read here comes back
+        # empty (e.g. a temporary Google Sheets API hiccup), we simply
+        # return the empty result instead of risking overwriting real
+        # user data.
         return df
     
     def _save_users_df(self, df: pd.DataFrame):
