@@ -679,24 +679,32 @@ def employee_performance_page():
         return
 
     # Ensure required columns exist
-    if 'operator' not in df.columns:
-        st.warning("No 'operator' column found in data. Employee performance cannot be displayed.")
+    if 'Operator' not in df.columns:
+        st.warning("No 'Operator' column found in data. Employee performance cannot be displayed.")
         return
 
     # Clean the data
-    df['operator'] = df['operator'].fillna('Unknown')
+    df = df.copy()
+    df['Operator'] = df['Operator'].fillna('Unknown')
+
+    # Compute per-row waste % using the same waste columns used elsewhere in the app
+    waste_cols = [c for c in (['Wastage_Cigarette'] + PIECE_WASTE_COLUMNS) if c in df.columns]
+    if waste_cols:
+        total_waste = df[waste_cols].apply(pd.to_numeric, errors='coerce').fillna(0).sum(axis=1)
+        output_qty = pd.to_numeric(df.get('Output_Quantity', 0), errors='coerce').fillna(0)
+        df['Waste_Pct'] = np.where(output_qty > 0, 100 * total_waste / output_qty, 0)
+    else:
+        df['Waste_Pct'] = 0
 
     # Get metrics for each employee
-    employee_metrics = df.groupby('operator').agg({
-        'output': ['sum', 'mean', 'count'],
-        'waste_percentage': 'mean' if 'waste_percentage' in df.columns else lambda x: 0
-    }).round(2)
-
-    employee_metrics.columns = ['Total Units', 'Avg Units', 'Days Worked', 'Avg Waste %']
-
-    # Ensure all columns exist
-    if 'Avg Waste %' not in employee_metrics.columns:
-        employee_metrics['Avg Waste %'] = 0
+    employee_metrics = df.groupby('Operator').agg(
+        **{
+            'Total Units': ('Output_Quantity', 'sum'),
+            'Avg Units': ('Output_Quantity', 'mean'),
+            'Days Worked': ('Output_Quantity', 'count'),
+            'Avg Waste %': ('Waste_Pct', 'mean'),
+        }
+    ).round(2)
 
     employee_metrics = employee_metrics.reset_index()
     employee_metrics = employee_metrics.sort_values('Total Units', ascending=False)
@@ -729,7 +737,7 @@ def employee_performance_page():
         color='Total Units',
         color_continuous_scale=['#C9A227', '#1F3864'],
         template=TMPL,
-        labels={'operator': 'Employee', 'Total Units': 'Total Units (sticks)'}
+        labels={'Operator': 'Employee', 'Total Units': 'Total Units (sticks)'}
     )
     fig.update_traces(
         texttemplate="%{text:,.0f}",
