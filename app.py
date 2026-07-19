@@ -946,7 +946,7 @@ def dashboard_page():
             st.rerun()
         return
 
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True)
     df = add_section_column(df)
     vd = df["Date"].dropna()
     if vd.empty:
@@ -1134,7 +1134,7 @@ def reports_page():
     if df.empty:
         st.info("No data available yet.")
         return
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True)
 
     with st.expander("🔎 Filters", expanded=True):
         c1, c2, c3, c4 = st.columns(4)
