@@ -731,7 +731,7 @@ def employee_performance_page():
     # Create bar chart with data labels
     fig = px.bar(
         employee_metrics,
-        x='operator',
+        x='Operator',
         y='Total Units',
         text='Total Units',
         color='Total Units',
