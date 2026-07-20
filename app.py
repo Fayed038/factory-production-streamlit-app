@@ -629,6 +629,10 @@ def load_data() -> pd.DataFrame:
 
 
 def save_data(df):
+    df = df.copy()
+    df["Date"] = pd.to_datetime(
+        df["Date"], errors="coerce", dayfirst=True, format="mixed"
+    ).dt.strftime("%d/%m/%Y")
     if gsheets:
         prod_db._save_dataframe(df)
     else:
@@ -977,7 +981,7 @@ def dashboard_page():
             st.rerun()
         return
 
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True)
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True, format="mixed")
     df = add_section_column(df)
     vd = df["Date"].dropna()
     if vd.empty:
@@ -1173,7 +1177,7 @@ def reports_page():
     if df.empty:
         st.info("No data available yet.")
         return
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True)
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True, format="mixed")
 
     with st.expander("🔎 Filters", expanded=True):
         c1, c2, c3, c4 = st.columns(4)
