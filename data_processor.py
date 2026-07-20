@@ -554,7 +554,7 @@ class DataProcessor:
         stopped_mask = (
             df["Output_Quantity"].fillna(0) == 0
         ) & (
-            df["Stoppage_Reason"].fillna("").str.lower().str.strip().str.startswith("stopped")
+            df["Stoppage_Reason"].fillna("").astype(str).str.lower().str.strip().str.startswith("stopped")
         )
         if stopped_mask.sum() > 0:
             self.warnings.append(
