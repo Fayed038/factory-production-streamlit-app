@@ -104,7 +104,7 @@ class GSheetsWrapper:
                     f"_sheet_exists: '{name}' sheet-এর status নিশ্চিত করা যায়নি ({e}) "
                     f"— data loss এড়াতে ধরে নেওয়া হচ্ছে sheet-টা আছে।"
                 )
-                return Truef
+                return True
 
         try:
             # Create users sheet if it doesn't exist
@@ -166,6 +166,7 @@ class GSheetsWrapper:
         except Exception:
             # Worksheet probably doesn't exist yet — create it instead.
             self.conn.create(worksheet=sheet_name, data=df)
+        st.cache_data.clear()    
         return True
     
     def append_to_sheet(self, df: pd.DataFrame, sheet_name: str) -> bool:
