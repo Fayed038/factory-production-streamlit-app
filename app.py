@@ -104,7 +104,7 @@ class GSheetsWrapper:
                     f"_sheet_exists: '{name}' sheet-এর status নিশ্চিত করা যায়নি ({e}) "
                     f"— data loss এড়াতে ধরে নেওয়া হচ্ছে sheet-টা আছে।"
                 )
-                return True
+                return Truef
 
         try:
             # Create users sheet if it doesn't exist
@@ -253,6 +253,8 @@ class GSheetsSecurityManager:
     def authenticate(self, username: str, password: str):
         """Authenticate user."""
         df = self._get_users_df()
+        if 'username' not in df.columns:
+            return False, "Temporary connection issue — please wait a moment and try logging in again.", None, None
         user_rows = df[df['username'] == username]
         if user_rows.empty:
             return False, "Invalid username or password.", None, None
