@@ -433,17 +433,15 @@ class DataProcessor:
             score = 0
             for canon, aliases in COLUMN_ALIASES.items():
                 all_names = [canon.lower().replace("_", " ")] + aliases
-                # exact match
                 if any(rv in all_names for rv in row_vals):
                     score += 2
-                # partial match
                 elif any(any(a in rv or rv in a for a in all_names) for rv in row_vals):
                     score += 1
             if score > best_score:
                 best_score, best_idx = score, i
 
         if best_idx is None or best_score < 2:
-            return None
+            return self._extract_wide_format(raw, sheet_name)
 
         header = raw.iloc[best_idx].tolist()
         data   = raw.iloc[best_idx + 1:].reset_index(drop=True)
@@ -451,7 +449,113 @@ class DataProcessor:
             str(h).strip() if pd.notna(h) else f"col_{j}"
             for j, h in enumerate(header)
         ]
-        return self._map_columns(data)
+        mapped = self._map_columns(data)
+        if mapped["Machine_Name"].notna().sum() == 0 and mapped["Machine_Code"].notna().sum() == 0:
+            wide = self._extract_wide_format(raw, sheet_name)
+            if wide is not None and not wide.empty:
+                return wide
+        return mapped
+
+    def _extract_wide_format(self, raw, sheet_name):
+        """
+        Parse the 'per-machine block' daily report layout: each machine
+        has its own vertical block, followed by a 'Field | Shift A |
+        Shift B' row, then field rows (Operator, Output, Wastage..,
+        Remarks), ending at a blank row. Produces one row per machine
+        per shift. The date is read from the sheet name (e.g. '15.07.26').
+        """
+        nrows, ncols = raw.shape
+        if ncols < 2:
+            return None
+        date_val = self._parse_date(sheet_name)
+
+        records = []
+        i = 0
+        while i < nrows - 1:
+            col0 = raw.iat[i, 0]
+            nxt0 = raw.iat[i + 1, 0] if i + 1 < nrows else None
+            if pd.notna(col0) and pd.notna(nxt0) and str(nxt0).strip().lower() == "field":
+                header_txt = str(col0).strip()
+                m = re.match(r"^(.*?)\s*\(([^)]+)\)\s*$", header_txt)
+                if m:
+                    machine_code, machine_name = m.group(1).strip(), m.group(2).strip()
+                else:
+                    machine_code, machine_name = header_txt, header_txt
+
+                j = i + 2
+                field_rows = []
+                while j < nrows:
+                    fname = raw.iat[j, 0]
+                    if pd.isna(fname) or str(fname).strip() == "":
+                        break
+                    val_a = raw.iat[j, 1] if ncols > 1 else None
+                    val_b = raw.iat[j, 2] if ncols > 2 else None
+                    field_rows.append((str(fname).strip(), val_a, val_b))
+                    j += 1
+
+                fdict = {name: (a, b) for name, a, b in field_rows}
+
+                for shift_idx, shift_label in enumerate(["A", "B"]):
+                    def fval(name):
+                        pair = fdict.get(name)
+                        return pair[shift_idx] if pair else None
+
+                    operator_parts = []
+                    plain_op = fval("Operator")
+                    if pd.notna(plain_op) and str(plain_op).strip():
+                        operator_parts.append(str(plain_op).strip())
+                    for role, label in [("Duplex M/C", "Duplex"), ("Bandroll M/C", "Bandroll"),
+                                        ("HLP M/C", "HLP"), ("Stamp M/C", "Stamp"),
+                                        ("Wrapper M/C", "Wrapper")]:
+                        v = fval(role)
+                        if pd.notna(v) and str(v).strip():
+                            operator_parts.append(f"{label}:{str(v).strip()}")
+                    operator_str = " / ".join(operator_parts) if operator_parts else np.nan
+
+                    skip_names = {"wastage cigarette", "wastage cigarette paper",
+                                  "wastage tipping paper", "wastage bopp"}
+                    middle_waste = [
+                        (a, b)[shift_idx] for name, a, b in field_rows
+                        if name.lower().startswith("wastage") and name.lower() not in skip_names
+                    ]
+                    shell_blanket = middle_waste[0] if len(middle_waste) > 0 else np.nan
+                    slide_alufoil = middle_waste[1] if len(middle_waste) > 1 else np.nan
+                    alufoil_innerframe = middle_waste[2] if len(middle_waste) > 2 else np.nan
+
+                    rec = {
+                        "Date": date_val,
+                        "Shift": shift_label,
+                        "Machine_Name": machine_name,
+                        "Machine_Code": machine_code,
+                        "Operator": operator_str,
+                        "Supervisor": fval("Supervisor"),
+                        "Output_Quantity": fval("Output"),
+                        "Wastage_Cigarette": fval("Wastage Cigarette"),
+                        "Wastage_Paper": fval("Wastage Cigarette Paper"),
+                        "Wastage_Tipping_Paper": fval("Wastage Tipping Paper"),
+                        "Dust": fval("Dust"),
+                        "Stem": fval("Stem"),
+                        "Wastage_Shell_Blanket": shell_blanket,
+                        "Wastage_Slide_AluFoil": slide_alufoil,
+                        "Wastage_AluFoil_InnerFrame": alufoil_innerframe,
+                        "Wastage_BOPP": fval("Wastage BOPP"),
+                        "Stoppage_Reason": fval("Remarks"),
+                        "Stoppage_Duration_Min": np.nan,
+                        "Report_Type": sheet_name,
+                    }
+                    records.append(rec)
+
+                i = j
+            else:
+                i += 1
+
+        if not records:
+            return None
+        df = pd.DataFrame(records)
+        for c in CANONICAL_COLUMNS:
+            if c not in df.columns:
+                df[c] = np.nan
+        return df[CANONICAL_COLUMNS]
 
     def _map_columns(self, df):
         rename_map  = {}
