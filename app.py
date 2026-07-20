@@ -93,7 +93,7 @@ class GSheetsWrapper:
             timeout ইত্যাদি) হলে ধরে নেবে sheet আছে — যাতে ভুলে 
             আসল ডেটা মুছে না যায়।"""
             try:
-                self.conn.read(worksheet=name, ttl=0)
+                self.conn.read(worksheet=name, ttl=20)
                 return True
             except Exception as e:
                 error_text = str(e).lower()
@@ -152,7 +152,7 @@ class GSheetsWrapper:
         if not self.conn:
             return pd.DataFrame()
         try:
-            return self.conn.read(worksheet=sheet_name, ttl=0)
+            return self.conn.read(worksheet=sheet_name, ttl=20)
         except Exception as e:
             logging.error(f"Failed to read sheet {sheet_name}: {e}")
             return pd.DataFrame()
