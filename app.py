@@ -1098,6 +1098,14 @@ def upload_page():
                     save_data(combined)
                 except DataProcessingError as e:
                     st.error(f"❌ {e}")
+                    if proc.errors:
+                        with st.expander(f"❌ {len(proc.errors)} detail(s)"):
+                            for err in proc.errors:
+                                st.write(f"- {err}")
+                    if proc.warnings:
+                        with st.expander(f"⚠️ {len(proc.warnings)} warning(s)"):
+                            for w in proc.warnings:
+                                st.write(f"- {w}")
                     return
                 except Exception as e:
                     st.exception(e)
