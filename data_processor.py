@@ -441,7 +441,7 @@ class DataProcessor:
                 best_score, best_idx = score, i
 
         if best_idx is None or best_score < 2:
-            return self._extract_wide_format(raw, sheet_name)
+            return self._extract_any_wide_format(raw, sheet_name)
 
         header = raw.iloc[best_idx].tolist()
         data   = raw.iloc[best_idx + 1:].reset_index(drop=True)
@@ -451,10 +451,18 @@ class DataProcessor:
         ]
         mapped = self._map_columns(data)
         if mapped["Machine_Name"].notna().sum() == 0 and mapped["Machine_Code"].notna().sum() == 0:
-            wide = self._extract_wide_format(raw, sheet_name)
+            wide = self._extract_any_wide_format(raw, sheet_name)
             if wide is not None and not wide.empty:
                 return wide
         return mapped
+
+    def _extract_any_wide_format(self, raw, sheet_name):
+        """Try every known non-tabular layout in turn; return the first that yields rows."""
+        for extractor in (self._extract_wide_format, self._extract_shift_numbered_format):
+            result = extractor(raw, sheet_name)
+            if result is not None and not result.empty:
+                return result
+        return None
 
     def _extract_wide_format(self, raw, sheet_name):
         """
@@ -548,6 +556,170 @@ class DataProcessor:
                 i = j
             else:
                 i += 1
+
+        if not records:
+            return None
+        df = pd.DataFrame(records)
+        for c in CANONICAL_COLUMNS:
+            if c not in df.columns:
+                df[c] = np.nan
+        return df[CANONICAL_COLUMNS]
+
+    def _extract_shift_numbered_format(self, raw, sheet_name):
+        """
+        Parse the 'numbered list' daily report layout: Shift A and Shift B
+        each occupy their own block of columns side-by-side (marked by a
+        'SHIFT: A' / 'SHIFT: B' cell), each machine has a name row, a
+        'Machine: <code>' row, a 'Supervisor: X' / 'Operator: Y' row (or a
+        single packed 'Operators: ...' row), then an 'S.N | Description |
+        Quantity' table (Output, Wastage Cigarette, Wastage Cig. Paper,
+        Wastage Tipping Paper, Dust, Stem, Closing Stock), then 'Remarks:'.
+        """
+        nrows, ncols = raw.shape
+        if nrows < 3 or ncols < 3:
+            return None
+
+        # Date: prefer "Date: DD.MM.YY" text in the first couple of rows,
+        # fall back to the sheet name.
+        date_val = pd.NaT
+        for i in range(min(3, nrows)):
+            for j in range(ncols):
+                cell = raw.iat[i, j]
+                if pd.notna(cell) and re.search(r"date", str(cell), re.I):
+                    m = re.search(r"(\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4})", str(cell))
+                    if m:
+                        date_val = self._parse_date(m.group(1))
+                        break
+            if pd.notna(date_val):
+                break
+        if pd.isna(date_val):
+            date_val = self._parse_date(sheet_name)
+
+        # Locate each "SHIFT: A" / "SHIFT: B" marker and its column offset.
+        shift_blocks = []
+        for i in range(min(10, nrows)):
+            for j in range(ncols):
+                cell = raw.iat[i, j]
+                if pd.notna(cell):
+                    m = re.match(r"^\s*SHIFT\s*[:\-]?\s*([AB])\s*$", str(cell).strip(), re.I)
+                    if m:
+                        shift_blocks.append((j, m.group(1).upper()))
+        if not shift_blocks:
+            return None
+
+        desc_map = [
+            (re.compile(r"^output", re.I),                    "Output_Quantity"),
+            (re.compile(r"^wastage\s*cigarette$", re.I),       "Wastage_Cigarette"),
+            (re.compile(r"^wastage\s*cig\.?\s*paper", re.I),   "Wastage_Paper"),
+            (re.compile(r"^wastage\s*tipping\s*paper", re.I),  "Wastage_Tipping_Paper"),
+            (re.compile(r"^dust", re.I),                       "Dust"),
+            (re.compile(r"^stem", re.I),                       "Stem"),
+            (re.compile(r"^wastage\s*shell", re.I),            "Wastage_Shell_Blanket"),
+            (re.compile(r"^wastage\s*slide", re.I),            "_SLIDE_"),
+            (re.compile(r"^wastage\s*alu.?foil", re.I),        "_ALUFOIL_"),
+            (re.compile(r"^wastage\s*inner\s*frame", re.I),    "_INNERFRAME_"),
+            (re.compile(r"^wastage\s*bopp", re.I),             "_BOPP_TOP_"),
+            (re.compile(r"^boxes", re.I),                      "_BOXES_"),
+        ]
+
+        def map_desc(desc_txt):
+            d = re.sub(r"\s*\([^)]*\)\s*", " ", str(desc_txt)).strip()
+            for pattern, canon in desc_map:
+                if pattern.match(d):
+                    return canon
+            return None
+
+        records = []
+        for start_col, shift_label in shift_blocks:
+            i = 0
+            while i < nrows - 1:
+                name_cell = raw.iat[i, start_col]
+                nxt_cell  = raw.iat[i + 1, start_col] if i + 1 < nrows else None
+                if (pd.notna(name_cell) and pd.notna(nxt_cell)
+                        and str(nxt_cell).strip().lower().startswith("machine:")):
+                    machine_name = self._normalize_machine_name_variants(str(name_cell).strip())
+                    mc = re.match(r"^machine\s*:\s*(.*)$", str(nxt_cell).strip(), re.I)
+                    machine_code = mc.group(1).strip() if mc else str(nxt_cell).strip()
+
+                    j = i + 2
+                    supervisor, operator = np.nan, np.nan
+                    if j < nrows:
+                        left = raw.iat[j, start_col]
+                        right = raw.iat[j, start_col + 2] if start_col + 2 < ncols else None
+                        if pd.notna(left):
+                            lm = re.match(r"^(supervisor|operators?)\s*:\s*(.*)$", str(left).strip(), re.I)
+                            if lm:
+                                if lm.group(1).lower().startswith("operator"):
+                                    operator = lm.group(2).strip()
+                                else:
+                                    supervisor = lm.group(2).strip()
+                        if pd.notna(right):
+                            rm = re.match(r"^operators?\s*:\s*(.*)$", str(right).strip(), re.I)
+                            if rm:
+                                operator = rm.group(1).strip()
+                        j += 1
+
+                    if j < nrows and str(raw.iat[j, start_col]).strip().upper() in ("S.N", "SN", "SL", "SL.NO"):
+                        j += 1  # skip the "S.N | Description | Quantity" header row
+
+                    values = {}
+                    while j < nrows:
+                        lbl = raw.iat[j, start_col]
+                        if pd.isna(lbl):
+                            break
+                        if str(lbl).strip().lower().startswith("remarks"):
+                            break
+                        desc = raw.iat[j, start_col + 1] if start_col + 1 < ncols else None
+                        qty  = raw.iat[j, start_col + 2] if start_col + 2 < ncols else None
+                        if pd.notna(desc):
+                            canon = map_desc(desc)
+                            if canon:
+                                values[canon] = qty
+                        j += 1
+
+                    remarks = np.nan
+                    if (j < nrows and pd.notna(raw.iat[j, start_col])
+                            and str(raw.iat[j, start_col]).strip().lower().startswith("remarks")):
+                        remarks = raw.iat[j, start_col + 1] if start_col + 1 < ncols else np.nan
+                        j += 1
+                    while j < nrows and pd.isna(raw.iat[j, start_col]):
+                        j += 1
+
+                    def num(canon):
+                        return self._to_numeric(values.get(canon))
+
+                    # "Slide" -> Wastage_Slide_AluFoil; "Alu-Foil" + "Inner Frame" ->
+                    # Wastage_AluFoil_InnerFrame (kept separate so nothing is double-counted).
+                    slide_alufoil = num("_SLIDE_")
+                    af, iframe = num("_ALUFOIL_"), num("_INNERFRAME_")
+                    af_if_parts = [v for v in (af, iframe) if pd.notna(v)]
+                    alufoil_innerframe = sum(af_if_parts) if af_if_parts else np.nan
+
+                    rec = {
+                        "Date": date_val,
+                        "Shift": shift_label,
+                        "Machine_Name": machine_name,
+                        "Machine_Code": machine_code,
+                        "Operator": operator,
+                        "Supervisor": supervisor,
+                        "Output_Quantity": num("Output_Quantity"),
+                        "Wastage_Cigarette": num("Wastage_Cigarette"),
+                        "Wastage_Paper": num("Wastage_Paper"),
+                        "Wastage_Tipping_Paper": num("Wastage_Tipping_Paper"),
+                        "Dust": num("Dust"),
+                        "Stem": num("Stem"),
+                        "Wastage_Shell_Blanket": num("Wastage_Shell_Blanket"),
+                        "Wastage_Slide_AluFoil": slide_alufoil,
+                        "Wastage_AluFoil_InnerFrame": alufoil_innerframe,
+                        "Wastage_BOPP": num("_BOPP_TOP_"),
+                        "Stoppage_Reason": remarks,
+                        "Stoppage_Duration_Min": np.nan,
+                        "Report_Type": sheet_name,
+                    }
+                    records.append(rec)
+                    i = j
+                else:
+                    i += 1
 
         if not records:
             return None
