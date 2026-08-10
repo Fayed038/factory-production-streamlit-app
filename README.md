@@ -27,12 +27,12 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Login: **admin / admin123** — change this immediately in **Admin Panel → Change Your Own Password**.
+Login: default credentials are set on first run — check **Admin Panel → Change Your Own Password** immediately after setup.
 
 ## Key notes
 
 - **Waste %** = (piece-count waste / output sticks) × 100. Cigarette wastage (grams) is tracked separately as its own KPI card — it is NOT included in the Waste % calculation because grams and sticks are different units.
 - **OEE Performance** is relative to your best-performing machine in the selected date range — it is a directional ranking signal, not an audited OEE figure (true Performance requires a known rated machine speed, which your reports don't record).
-- **Machine normalisation**: the stable name (e.g. "Making-01") is used as the grouping key, not the equipment code, because codes vary between shifts for the same physical line in your source files.
+- **Machine normalisation**: the stable machine name is used as the grouping key, not the equipment code, because codes vary between shifts for the same physical line in your source files.
 - If `reportlab` isn't installed, PDF export is automatically disabled — everything else still works.
 - To adjust the assumed shift length for OEE, edit `DEFAULT_SHIFT_MINUTES` near the top of `data_processor.py`.
