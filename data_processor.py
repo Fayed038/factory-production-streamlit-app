@@ -603,11 +603,17 @@ class DataProcessor:
                     sm = sup_re.match(v)
                     if sm:
                         supervisor = sm.group(1).strip() or None
+                        if not supervisor:
+                            adj = cell_str(i, start_col + 1)
+                            supervisor = adj if adj else None
                         i += 1
                         continue
                     om = op_re.match(v)
                     if om:
                         operator = om.group(1).strip() or None
+                        if not operator:
+                            adj = cell_str(i, start_col + 1)
+                            operator = adj if adj else None
                         i += 1
                         continue
                     # Floor Running / other metadata lines — ignore and continue
