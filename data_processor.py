@@ -458,11 +458,232 @@ class DataProcessor:
 
     def _extract_any_wide_format(self, raw, sheet_name):
         """Try every known non-tabular layout in turn; return the first that yields rows."""
-        for extractor in (self._extract_wide_format, self._extract_shift_numbered_format):
+        for extractor in (self._extract_flexible_shift_blocks,
+                           self._extract_wide_format,
+                           self._extract_shift_numbered_format):
             result = extractor(raw, sheet_name)
             if result is not None and not result.empty:
                 return result
         return None
+
+    _DESC_MAP = [
+        (re.compile(r"^output", re.I),                    "Output_Quantity"),
+        (re.compile(r"^wastage\s*cigarette$", re.I),       "Wastage_Cigarette"),
+        (re.compile(r"^wastage\s*cig\.?\s*paper", re.I),   "Wastage_Paper"),
+        (re.compile(r"^wastage\s*cigarette\s*paper", re.I),"Wastage_Paper"),
+        (re.compile(r"^wastage\s*tipping\s*paper", re.I),  "Wastage_Tipping_Paper"),
+        (re.compile(r"^dust", re.I),                       "Dust"),
+        (re.compile(r"^stem", re.I),                       "Stem"),
+        (re.compile(r"^wastage\s*shell", re.I),            "Wastage_Shell_Blanket"),
+        (re.compile(r"^wastage\s*slide", re.I),            "Wastage_Slide_AluFoil"),
+        (re.compile(r"^wastage\s*alu.?foil", re.I),        "_ALUFOIL_"),
+        (re.compile(r"^wastage\s*inner\s*frame", re.I),    "_INNERFRAME_"),
+        (re.compile(r"^wastage\s*bopp", re.I),             "Wastage_BOPP"),
+        (re.compile(r"^boxes", re.I),                      None),
+        (re.compile(r"^closing", re.I),                    None),
+    ]
+
+    @classmethod
+    def _map_desc_flex(cls, desc_txt):
+        d = re.sub(r"\s*\([^)]*\)\s*", " ", str(desc_txt)).strip()
+        for pattern, canon in cls._DESC_MAP:
+            if pattern.match(d):
+                return canon
+        return None
+
+    def _extract_flexible_shift_blocks(self, raw, sheet_name):
+        """
+        Flexible, keyword-driven parser for 'per-machine, per-shift block'
+        daily logs. Handles variants where the machine/shift header is
+        either:
+          - "SHIFT: A" on its own row, followed by a "<Name> (<Code>)" row, or
+          - "<Name> (<Code>) - SHIFT A" combined on one row.
+        followed by optional "Floor Running / Supervisor / Operator" lines,
+        then an "S.N | Description | Quantity | Remarks" table, then an
+        optional trailing stoppage/remarks line, then a blank separator.
+        Driven by keyword matching rather than fixed row offsets, so minor
+        layout drift between sheets/months doesn't break it.
+        """
+        nrows, ncols = raw.shape
+        if nrows < 5 or ncols < 3:
+            return None
+
+        date_val = pd.NaT
+        for i in range(min(3, nrows)):
+            for j in range(ncols):
+                cell = raw.iat[i, j]
+                if pd.notna(cell) and re.search(r"date", str(cell), re.I):
+                    m = re.search(r"(\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4})", str(cell))
+                    if m:
+                        date_val = self._parse_date(m.group(1))
+                    else:
+                        nxt = raw.iat[i, j + 1] if j + 1 < ncols else None
+                        if pd.notna(nxt):
+                            date_val = self._parse_date(str(nxt))
+                    break
+            if pd.notna(date_val):
+                break
+        if pd.isna(date_val):
+            date_val = self._parse_date(sheet_name)
+
+        combo_re  = re.compile(r"^(.*?)\s*\(([^)]+)\)\s*-\s*SHIFT\s*[:\-]?\s*([AB])\s*$", re.I)
+        shift_re  = re.compile(r"^\s*SHIFT\s*[:\-]?\s*([AB])\s*$", re.I)
+        name_re   = re.compile(r"^(.*?)\s*\(([^)]+)\)\s*$")
+        sup_re    = re.compile(r"^supervisor[^:]*:\s*(.*)$", re.I)
+        op_re     = re.compile(r"^operator[^:]*:\s*(.*)$", re.I)
+        sn_hdr_re = re.compile(r"^\s*S\.?\s*N\.?\s*$", re.I)
+        stop_lbl_re = re.compile(r"^(closing|remarks)\b", re.I)
+
+        def cell_str(i, j):
+            if i >= nrows or j >= ncols:
+                return None
+            v = raw.iat[i, j]
+            return str(v).strip() if pd.notna(v) else None
+
+        def is_int_like(v):
+            if pd.isna(v):
+                return False
+            try:
+                int(float(v))
+                return True
+            except (TypeError, ValueError):
+                return False
+
+        records = []
+        for start_col in range(ncols):
+            i = 0
+            while i < nrows:
+                c0 = cell_str(i, start_col)
+                if not c0:
+                    i += 1
+                    continue
+
+                machine_name = machine_code = shift_label = None
+                m = combo_re.match(c0)
+                if m:
+                    machine_name, machine_code, shift_label = m.group(1).strip(), m.group(2).strip(), m.group(3).upper()
+                    i += 1
+                else:
+                    m = shift_re.match(c0)
+                    if m:
+                        shift_label = m.group(1).upper()
+                        # find the machine-name row within the next few rows
+                        k = i + 1
+                        while k < nrows and k < i + 4:
+                            nm = cell_str(k, start_col)
+                            if nm:
+                                mm = name_re.match(nm)
+                                if mm:
+                                    machine_name, machine_code = mm.group(1).strip(), mm.group(2).strip()
+                                else:
+                                    machine_name = nm
+                                i = k + 1
+                                break
+                            k += 1
+                        else:
+                            i += 1
+                    else:
+                        i += 1
+                        continue
+
+                if not machine_name:
+                    continue
+
+                supervisor = operator = None
+                # scan metadata lines until we hit the S.N table header (max 6 rows lookahead)
+                scan_limit = min(nrows, i + 6)
+                while i < scan_limit:
+                    v = cell_str(i, start_col)
+                    if v is None:
+                        i += 1
+                        continue
+                    if sn_hdr_re.match(v):
+                        i += 1
+                        break
+                    sm = sup_re.match(v)
+                    if sm:
+                        supervisor = sm.group(1).strip() or None
+                        i += 1
+                        continue
+                    om = op_re.match(v)
+                    if om:
+                        operator = om.group(1).strip() or None
+                        i += 1
+                        continue
+                    # Floor Running / other metadata lines — ignore and continue
+                    i += 1
+
+                values = {}
+                remarks_texts = []
+                while i < nrows:
+                    sn_val = raw.iat[i, start_col] if start_col < ncols else None
+                    if not is_int_like(sn_val):
+                        break
+                    desc = cell_str(i, start_col + 1) if start_col + 1 < ncols else None
+                    qty  = raw.iat[i, start_col + 2] if start_col + 2 < ncols else None
+                    rmk  = cell_str(i, start_col + 3) if start_col + 3 < ncols else None
+                    if desc:
+                        canon = self._map_desc_flex(desc)
+                        if canon:
+                            values[canon] = qty
+                    if rmk and rmk.strip().lower() not in ("stick", "sticks", "gm", "gram", "grams"):
+                        remarks_texts.append(rmk.strip())
+                    i += 1
+
+                if not values:
+                    continue
+
+                # trailing stoppage / remarks line before the next blank/block
+                if i < nrows:
+                    trailing = cell_str(i, start_col)
+                    if trailing:
+                        sm = stop_lbl_re.match(trailing)
+                        if sm:
+                            val = cell_str(i, start_col + 1)
+                            if val:
+                                remarks_texts.append(val)
+                            i += 1
+                        elif not combo_re.match(trailing) and not shift_re.match(trailing):
+                            remarks_texts.append(trailing)
+                            i += 1
+
+                while i < nrows and not cell_str(i, start_col):
+                    i += 1
+
+                rec = {
+                    "Date": date_val,
+                    "Shift": shift_label,
+                    "Machine_Name": machine_name,
+                    "Machine_Code": machine_code,
+                    "Operator": operator,
+                    "Supervisor": supervisor,
+                    "Output_Quantity": self._to_numeric(values.get("Output_Quantity")),
+                    "Wastage_Cigarette": self._to_numeric(values.get("Wastage_Cigarette")),
+                    "Wastage_Paper": self._to_numeric(values.get("Wastage_Paper")),
+                    "Wastage_Tipping_Paper": self._to_numeric(values.get("Wastage_Tipping_Paper")),
+                    "Dust": self._to_numeric(values.get("Dust")),
+                    "Stem": self._to_numeric(values.get("Stem")),
+                    "Wastage_Shell_Blanket": self._to_numeric(values.get("Wastage_Shell_Blanket")),
+                    "Wastage_Slide_AluFoil": self._to_numeric(values.get("Wastage_Slide_AluFoil")),
+                    "Wastage_AluFoil_InnerFrame": self._to_numeric(
+                        sum(v for v in (self._to_numeric(values.get("_ALUFOIL_")),
+                                        self._to_numeric(values.get("_INNERFRAME_")))
+                            if pd.notna(v)) or np.nan
+                    ),
+                    "Wastage_BOPP": self._to_numeric(values.get("Wastage_BOPP")),
+                    "Stoppage_Reason": " / ".join(remarks_texts) if remarks_texts else np.nan,
+                    "Stoppage_Duration_Min": np.nan,
+                    "Report_Type": sheet_name,
+                }
+                records.append(rec)
+
+        if not records:
+            return None
+        df = pd.DataFrame(records)
+        for c in CANONICAL_COLUMNS:
+            if c not in df.columns:
+                df[c] = np.nan
+        return df[CANONICAL_COLUMNS]
 
     def _extract_wide_format(self, raw, sheet_name):
         """
